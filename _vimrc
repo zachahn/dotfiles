@@ -25,7 +25,7 @@ let g:bufferline_fixed_index = 0
 let g:airline_theme='sol'
 let g:airline_powerline_fonts = 1
 
-# a.vim
+" a.vim
 
 let g:alternateExtensions_coffee = 'js'
 let g:alternateExtensions_js = 'coffee'
