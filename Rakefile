@@ -1,4 +1,6 @@
 task :default do
+  Rake::Task["link"].invoke
+  Rake::Task["vim"].invoke
 end
 
 task :vim do
