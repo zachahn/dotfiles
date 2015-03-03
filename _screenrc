@@ -1,0 +1,8 @@
+startup_message off
+hardstatus alwayslastline "%{=}%-w%{+b b}%n %t%{-b w}%+w %=%c"
+altscreen on
+
+term screen-256color
+#escape ^Gg
+#defscrollback 5000
+
