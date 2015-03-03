@@ -20,8 +20,10 @@ task :link do
     if File.exist?(dest)
       fail "file `#{dest}` already exists" unless File.symlink?(dest)
       fail "symlink `#{dest}` exists" unless File.readlink(dest) == src
+      puts "exists #{dest}"
     else
       File.symlink(src, dest)
+      puts "linked #{dest}"
     end
   end
 end
