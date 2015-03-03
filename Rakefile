@@ -1,8 +1,10 @@
+desc "run all nondestructive tasks"
 task :default do
   Rake::Task["link"].invoke
   Rake::Task["vim"].invoke
 end
 
+desc "setup vim + vundle"
 task :vim do
   path_to_vundle = File.join(ENV["HOME"], ".vim/bundle/Vundle.vim")
 
@@ -13,6 +15,7 @@ task :vim do
   `vim +PluginInstall +qall`
 end
 
+desc "setup all symlinks"
 task :link do
   Dotfile.each do |df|
     if df.exists?
@@ -25,6 +28,7 @@ task :link do
   end
 end
 
+desc "delete all symlinks"
 task :clean do
   Dotfile.each do |df|
     was_unlinked = df.unlink!
