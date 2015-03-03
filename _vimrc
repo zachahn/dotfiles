@@ -43,13 +43,13 @@ if has("mouse")
 	set mousehide
 endif
 
-"" whitespace EOL highlights, opening tabs underlines
-"highlight WhitespaceEOL ctermbg=LightMagenta guibg=LightMagenta
-"match WhitespaceEOL /\s\+$/
-"" highlight TabCharacters ctermfg=Yellow cterm=underline
-"" highlight TabCharacters guifg=Yellow gui=underline
-"highlight TabCharacters ctermfg=LightMagenta cterm=underline
-"highlight TabCharacters guifg=LightMagenta gui=underline
-"2match TabCharacters /^\t\+/
-"
 set hlsearch
+
+" Red blocks for whitespace on EOL
+highlight WhitespaceEOL ctermbg=Red guibg=Red
+match WhitespaceEOL /\s\+$/
+
+" Pink underlines on tabs
+highlight TabCharacters ctermfg=LightMagenta cterm=underline
+highlight TabCharacters guifg=LightMagenta gui=underline
+2match TabCharacters /^\t\+/
