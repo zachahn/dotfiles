@@ -14,18 +14,54 @@ task :vim do
 end
 
 task :link do
-  Dir.glob("_*").each do |file|
-    to   = file.sub("_", ".")
-    src  = File.join(Dir.pwd, file)
-    dest = File.join(ENV["HOME"], to)
-
-    if File.exist?(dest)
-      fail "file `#{dest}` already exists" unless File.symlink?(dest)
-      fail "symlink `#{dest}` exists" unless File.readlink(dest) == src
-      puts "exists #{dest}"
+  Dotfile.each do |df|
+    if df.exists?
+      fail "#{df.link} already exists" unless df.linked?
+      puts "exists #{df.link}"
     else
-      File.symlink(src, dest)
-      puts "linked #{dest}"
+      df.link!
+      puts "linked #{df.link}"
     end
   end
 end
+
+# helpers
+
+class Dotfile
+  def self.each(&block)
+    all_dotfiles = Dir.glob("_*")
+    instances    = all_dotfiles.map { |file| self.new(file) }
+
+    instances.each(&block)
+  end
+
+  def initialize(dotfile)
+    link_name = dotfile.sub("_", ".")
+    @target   = File.join(Dir.pwd, dotfile)
+    @link     = File.join(ENV["HOME"], link_name)
+  end
+
+  attr_reader :target, :link
+
+  def exists?
+    File.exist?(@link)
+  end
+
+  def linked?
+    File.symlink?(@link) && File.readlink(@link) == @target
+  end
+
+  def link!
+    File.symlink(@target, @link)
+  end
+
+  def unlink!
+    if exists? && linked?
+      File.delete(@link)
+      true
+    else
+      false
+    end
+  end
+end
+
