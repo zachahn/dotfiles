@@ -2,6 +2,9 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+" load sensible configs early
+runtime! plugin/sensible.vim
+
 " better tab complete
 set wildmode=longest,list,full
 
