@@ -43,13 +43,6 @@ if has("mouse")
 	set mousehide
 endif
 
-"syntax on
-"set ruler
-"set incsearch
-"set hlsearch
-"set autoindent
-"set relativenumber
-"
 "" whitespace EOL highlights, opening tabs underlines
 "highlight WhitespaceEOL ctermbg=LightMagenta guibg=LightMagenta
 "match WhitespaceEOL /\s\+$/
@@ -59,3 +52,4 @@ endif
 "highlight TabCharacters guifg=LightMagenta gui=underline
 "2match TabCharacters /^\t\+/
 "
+set hlsearch
