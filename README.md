@@ -1,5 +1,13 @@
 # Dotfiles
 
+## Quick start guide
+
+```
+git clone git@github.com:zachahn/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+rake
+```
+
 ## Manual
 
 - `rake`  
