@@ -25,6 +25,14 @@ task :link do
   end
 end
 
+task :clean do
+  Dotfile.each do |df|
+    was_unlinked = df.unlink!
+
+    puts "unlinking #{df.link}" if was_unlinked
+  end
+end
+
 # helpers
 
 class Dotfile
