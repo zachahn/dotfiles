@@ -4,17 +4,6 @@ task :default do
   Rake::Task["vim"].invoke
 end
 
-desc "setup vim + vundle"
-task :vim do
-  path_to_vundle = File.join(ENV["HOME"], ".vim/bundle/Vundle.vim")
-
-  unless File.exist?(path_to_vundle)
-    `git clone https://github.com/gmarik/Vundle.vim.git #{path_to_vundle}`
-  end
-
-  `vim +PluginInstall +qall`
-end
-
 desc "setup all symlinks"
 task :link do
   Dotfile.each do |df|
@@ -26,6 +15,17 @@ task :link do
       puts "linked #{df.link}"
     end
   end
+end
+
+desc "setup vim + vundle"
+task :vim do
+  path_to_vundle = File.join(ENV["HOME"], ".vim/bundle/Vundle.vim")
+
+  unless File.exist?(path_to_vundle)
+    `git clone https://github.com/gmarik/Vundle.vim.git #{path_to_vundle}`
+  end
+
+  `vim +PluginInstall +qall`
 end
 
 desc "delete all symlinks"
