@@ -1,1 +1,9 @@
 source ~/.zprezto/runcoms/zshrc
+
+if is-callable 'dircolors'; then
+  alias ls='ls --group-directories-first'
+fi
+
+alias ls='ls --color=auto'
+alias lah='ls -lah'
+alias s='sudo'
