@@ -27,3 +27,6 @@ alias HR="hr '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '�
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
+# PATH
+
+export PATH=".git/safe/../../bin:$PATH"
