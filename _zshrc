@@ -4,8 +4,17 @@ source ~/.zprezto/runcoms/zshrc
 
 if is-callable 'dircolors'; then
   alias ls='ls --group-directories-first'
+  alias ls='ls --color=auto'
+else
+  alias ls='ls -G'
+  export CLICOLOR=1
+  export LSCOLORS=ExFxBxDxCxegedabagacad
+
+  # print ACL
+  alias ls='ls -e'
 fi
 
-alias ls='ls --color=auto'
 alias lah='ls -lah'
+alias l='ls'
+alias sl='ls'
 alias s='sudo'
