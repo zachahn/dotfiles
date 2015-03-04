@@ -18,3 +18,8 @@ alias lah='ls -lah'
 alias l='ls'
 alias sl='ls'
 alias s='sudo'
+alias dush='du -sh'
+alias be='bundle exec'
+alias hr="hr '💄 ' '🎀 ' '👠 ' '👛 '"
+alias HR="hr '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 '"
+
