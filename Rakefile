@@ -28,6 +28,16 @@ task :vim do
   `vim +PluginInstall +qall`
 end
 
+desc "setup zsh (prezto)"
+task :zsh do
+  path_to_prezto = File.join(ENV["HOME"], ".zprezto")
+  clone_url      = "https://github.com/sorin-ionescu/prezto.git"
+
+  unless File.exist?(path_to_prezto)
+    `git clone --recursive #{clone_url} #{path_to_prezto}`
+  end
+end
+
 desc "delete all symlinks"
 task :clean do
   Dotfile.each do |df|
