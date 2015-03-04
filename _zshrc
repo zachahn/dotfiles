@@ -30,3 +30,24 @@ alias HR="hr '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '�
 # PATH
 
 export PATH=".git/safe/../../bin:$PATH"
+
+# Calculator
+calc() { awk "BEGIN{ print $* }"; }
+
+# PDF man pages
+pman() { man -t "${1}" | open -f -a /Applications/Preview.app/ }
+
+# Show/hide desktop
+desktop() {
+  if [[ $1 == "show" ]]; then
+    defaults write com.apple.finder CreateDesktop -bool true
+    killall Finder
+  elif [[ $1 == "hide" ]]; then
+    defaults write com.apple.finder CreateDesktop -bool false
+    killall Finder
+  else
+    echo "usage: $0 [show|hide]"
+    echo "  show/hide desktop icons"
+  fi
+}
+
