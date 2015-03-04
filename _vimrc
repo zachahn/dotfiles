@@ -1,5 +1,5 @@
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/.vimrc_bundles"))
+  source ~/.vimrc_bundles
 endif
 
 " load sensible configs early
