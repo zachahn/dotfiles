@@ -19,3 +19,6 @@ rake
 
 - `rake vim`  
   sets up Vundle.vim
+
+- `rake zsh`  
+  sets up Prezto
