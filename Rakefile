@@ -2,6 +2,7 @@ desc "run all nondestructive tasks"
 task :default do
   Rake::Task["link"].invoke
   Rake::Task["vim"].invoke
+  Rake::Task["zsh"].invoke
 end
 
 desc "setup all symlinks"
