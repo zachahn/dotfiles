@@ -22,6 +22,8 @@ alias dush='du -sh'
 alias be='bundle exec'
 alias hr="hr '💄 ' '🎀 ' '👠 ' '👛 '"
 alias HR="hr '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 '"
+alias reload!='source ~/.zshrc'
+alias update!='zsh -c "cd ~/.dotfiles; rake"'
 
 # BOXEN
 
