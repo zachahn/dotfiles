@@ -12,10 +12,17 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
+  'history' \
   'directory' \
   'spectrum' \
   'completion' \
   'prompt'
+
+unsetopt EXTENDED_HISTORY
+unsetopt INC_APPEND_HISTORY
+unsetopt SHARE_HISTORY
+unsetopt HIST_SAVE_NO_DUPS
+unsetopt HIST_BEEP
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
