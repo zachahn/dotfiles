@@ -5,6 +5,11 @@ endif
 " load sensible configs early
 runtime! plugin/sensible.vim
 
+if (exists('+colorcolumn'))
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=9
+endif
+
 " better tab complete
 set wildmode=longest,list,full
 
