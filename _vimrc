@@ -5,6 +5,8 @@ endif
 " load sensible configs early
 runtime! plugin/sensible.vim
 
+autocmd FileType gitcommit setlocal spell
+
 if (exists('+colorcolumn'))
   set colorcolumn=80
   highlight ColorColumn ctermbg=9
