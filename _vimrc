@@ -41,6 +41,9 @@ let g:airline_powerline_fonts = 1
 let g:alternateExtensions_coffee = 'js'
 let g:alternateExtensions_js = 'coffee'
 
+" markdown
+let g:vim_markdown_folding_disabled=1
+
 " switching buffers
 set hidden
 map <TAB>   :bnext<CR>
