@@ -14,7 +14,8 @@ autocmd InsertEnter * :set number
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 autocmd InsertLeave * :set nonumber
-set so=999
+" set so=999
+set so=7
 
 filetype plugin on
 
