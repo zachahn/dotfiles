@@ -15,6 +15,8 @@ endif
 " better tab complete
 set wildmode=longest,list,full
 
+set linebreak
+
 " relative line numbers
 set relativenumber
 autocmd InsertEnter * :set number
