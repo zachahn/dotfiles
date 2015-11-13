@@ -26,6 +26,11 @@ task :vim do
     `git clone https://github.com/gmarik/Vundle.vim.git #{path_to_vundle}`
   end
 
+  File.symlink(
+    File.join(Dir.pwd, "vim_init"),
+    File.join(ENV["HOME"], ".vim/init")
+  )
+
   `vim +PluginInstall +qall`
 end
 
