@@ -12,6 +12,9 @@ if (exists('+colorcolumn'))
   highlight ColorColumn ctermbg=9
 endif
 
+runtime! init/**.vim
+
+
 " better tab complete
 set wildmode=longest,list,full
 
@@ -28,23 +31,7 @@ set so=7
 
 filetype plugin on
 
-" UI
-colorscheme github
-set guifont=Meslo\ LG\ S\ for\ Powerline:h14
 
-let g:bufferline_echo = 0
-let g:bufferline_rotate = 1
-let g:bufferline_fixed_index = 0
-let g:airline_theme='sol'
-let g:airline_powerline_fonts = 1
-
-" a.vim
-
-let g:alternateExtensions_coffee = 'js'
-let g:alternateExtensions_js = 'coffee'
-
-" markdown
-let g:vim_markdown_folding_disabled=1
 
 " switching buffers
 set hidden
