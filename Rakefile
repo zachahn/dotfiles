@@ -59,8 +59,8 @@ end
 # helpers
 
 class Dotfile
-  def self.each(&block)
-    all_dotfiles = Dir.glob("_*")
+  def self.each(glob_pattern = "_*", &block)
+    all_dotfiles = Dir.glob(glob_pattern)
     instances    = all_dotfiles.map { |file| self.new(file) }
 
     instances.each(&block)
