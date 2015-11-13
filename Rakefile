@@ -29,12 +29,12 @@ task :vim do
     `vim +PluginInstall +qall`
   end
 
-  File.symlink(
-    File.join(Dir.pwd, "vim_init"),
-    File.join(ENV["HOME"], ".vim/init")
-  )
-
-  `vim +PluginInstall +qall`
+  unless File.exist?(File.join(ENV["HOME"], ".vim/init"))
+    File.symlink(
+      File.join(Dir.pwd, "vim_init"),
+      File.join(ENV["HOME"], ".vim/init")
+    )
+  end
 end
 
 desc "setup zsh (prezto)"
