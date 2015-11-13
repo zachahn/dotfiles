@@ -22,8 +22,11 @@ desc "setup vim + vundle"
 task :vim do
   path_to_vundle = File.join(ENV["HOME"], ".vim/bundle/Vundle.vim")
 
-  unless File.exist?(path_to_vundle)
+  if File.exist?(path_to_vundle)
+    `vim +PluginUpdate +qall`
+  else
     `git clone https://github.com/gmarik/Vundle.vim.git #{path_to_vundle}`
+    `vim +PluginInstall +qall`
   end
 
   File.symlink(
