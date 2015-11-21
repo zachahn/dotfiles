@@ -14,6 +14,9 @@ else
   alias ls='ls -e'
 fi
 
+unsetopt INC_APPEND_HISTORY
+unsetopt SHARE_HISTORY
+
 alias lah='ls -lah'
 alias l='ls'
 alias sl='ls'

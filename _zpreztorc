@@ -9,13 +9,6 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-
-unsetopt EXTENDED_HISTORY
-unsetopt INC_APPEND_HISTORY
-unsetopt SHARE_HISTORY
-unsetopt HIST_SAVE_NO_DUPS
-unsetopt HIST_BEEP
-
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
@@ -25,15 +18,6 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'completion' \
   'prompt'
-
-unsetopt EXTENDED_HISTORY
-unsetopt INC_APPEND_HISTORY
-unsetopt SHARE_HISTORY
-unsetopt HIST_SAVE_NO_DUPS
-unsetopt HIST_BEEP
-
-setopt no_inc_append_history
-setopt no_share_history
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
