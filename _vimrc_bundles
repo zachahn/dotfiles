@@ -28,6 +28,7 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/camelcasemotion'
 
 " tabular must come before vim-markdown
 Plugin 'godlygeek/tabular'
