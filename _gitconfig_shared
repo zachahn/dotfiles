@@ -1,0 +1,9 @@
+# To apply the configuration from this file, append this to your ~/.gitconfig:
+# [include]
+#	path = .gitconfig_shared
+
+[alias]
+	co = checkout
+	lg = log
+	nvm = reset --soft head~1
+	amend = commit --amend
