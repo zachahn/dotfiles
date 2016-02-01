@@ -25,7 +25,7 @@ task :vim do
   if File.exist?(path_to_vundle)
     `vim +PluginUpdate +qall`
   else
-    `git clone https://github.com/gmarik/Vundle.vim.git #{path_to_vundle}`
+    `git clone https://github.com/VundleVim/Vundle.vim.git #{path_to_vundle}`
     `vim +PluginInstall +qall`
   end
 
