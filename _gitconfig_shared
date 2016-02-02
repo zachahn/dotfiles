@@ -4,6 +4,6 @@
 
 [alias]
 	co = checkout
-	lg = log
+	lg = log --oneline
 	nvm = reset --soft head~1
 	amend = commit --amend
