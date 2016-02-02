@@ -7,7 +7,7 @@ runtime! plugin/sensible.vim
 
 autocmd FileType gitcommit setlocal spell
 
-runtime! init/**.vim
+runtime! init/**/*.vim
 
 
 " better tab complete
