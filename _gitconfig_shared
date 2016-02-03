@@ -4,6 +4,10 @@
 
 [alias]
 	co = checkout
-	lg = log --oneline
+	lg = log --oneline -n 20
 	nvm = reset --soft head~1
 	amend = commit --amend
+	ir = rebase -i
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	st = status
