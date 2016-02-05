@@ -8,3 +8,6 @@ map \| :NERDTreeFind<CR>
 set hidden
 map <TAB>   :bnext<CR>
 map <S-TAB> :bprev<CR>
+
+" buffergator
+nnoremap <silent> <Leader>\ :BuffergatorToggle<CR>
