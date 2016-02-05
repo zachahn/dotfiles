@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'croaky/vim-colors-github'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'itchyny/lightline.vim'
 Plugin 'janko-m/vim-test'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kchmck/vim-coffee-script'
