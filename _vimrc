@@ -18,8 +18,6 @@ set linebreak
 " set scrolloff=999
 set scrolloff=7
 
-filetype plugin on
-
 if has("mouse")
 	set mouse=a
 	set mousehide
