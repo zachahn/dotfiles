@@ -14,3 +14,4 @@
 	last = log -1 HEAD
 	unstage = reset HEAD --
 	st = status
+	pf = push --force-with-lease
