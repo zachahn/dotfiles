@@ -2,6 +2,9 @@
 # [include]
 #	path = .gitconfig_shared
 
+[fetch]
+	prune = true
+
 [alias]
 	co = checkout
 	cob = checkout -b
