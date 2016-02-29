@@ -14,7 +14,7 @@
 	lp = "!gitlp() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; gitlp"
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	nvm = reset --soft head~1
+	nvm = reset --soft HEAD~1
 	amend = commit --amend
 	ri = "!gitri() { git rebase -i HEAD~$1; }; gitri"
 	last = log -1 HEAD
