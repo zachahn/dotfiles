@@ -10,6 +10,8 @@
 	cob = checkout -b
 	cv = commit -v
 	cva = commit -v -a
+	changes = diff master...HEAD
+	changed-files = diff --name-status master...HEAD
 	lb = "!gitlb() { if git rev-parse -q --verify origin/master > /dev/null ; then range=origin/master..HEAD ; else range=master..HEAD ; fi; git log --oneline $range ; }; gitlb"
 	lp = "!gitlp() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; gitlp"
 	lg = log --oneline -n 20
