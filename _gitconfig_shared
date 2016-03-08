@@ -6,6 +6,7 @@
 	prune = true
 
 [alias]
+	bd = branch -d
 	co = checkout
 	cob = checkout -b
 	cv = commit -v
