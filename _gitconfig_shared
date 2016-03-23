@@ -13,6 +13,7 @@
 	cva = commit -v -a
 	changes = diff master...HEAD
 	changed-files = diff --name-status master...HEAD
+	cstash = "!cstash() { git add . ; git commit -m 'cstash!' ; }; cstash"
 	df = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	lsb = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	lb = log --oneline master..HEAD
