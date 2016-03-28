@@ -90,3 +90,29 @@ class Dot
 
   attr_reader :target, :link
 end
+
+class DotfileLinker
+  def initialize(dotfile)
+    @dotfile = dotfile
+  end
+
+  def link
+    dotfile = @dotfile
+
+    linker = Sloth.new
+    linker.dsm(:first_run?) { dotfile.status == :not_exists }
+    linker.dsm(:first)      { File.link(dotfile.target, dotfile.link) }
+    linker.dsm(:always)     { puts "#{dotfile.status} #{dotfile.link}" }
+    linker.call
+  end
+
+  def unlink
+    dotfile = @dotfile
+
+    linker = Sloth.new
+    linker.dsm(:first_run?) { dotfile.status == :linked }
+    linker.dsm(:first)      { File.delete(dotfile.link) }
+    linker.dsm(:always)     { puts "#{dotfile.status} #{dotfile.link}" }
+    linker.call
+  end
+end
