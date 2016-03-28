@@ -15,12 +15,14 @@ task :link do
     .each { |dot|  dot.link }
 end
 
-desc "delete all symlinks"
-task :unlink do
-  Dir.glob("_*")
-    .map  { |file| Dotfile.new(file) }
-    .map  { |dot|  DotfileLinker.new(dot) }
-    .each { |dot|  dot.unlink }
+namespace :link do
+  desc "delete all symlinks"
+  task :clean do
+    Dir.glob("_*")
+      .map  { |file| Dotfile.new(file) }
+      .map  { |dot|  DotfileLinker.new(dot) }
+      .each { |dot|  dot.unlink }
+  end
 end
 
 desc "setup vim + vundle"
