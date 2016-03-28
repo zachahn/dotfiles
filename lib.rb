@@ -65,7 +65,7 @@ if $test
   end
 end
 
-class Dot
+class Dotfile
   def initialize(dotfile)
     link_name = dotfile.sub("_", ".")
     @target   = File.join(Dir.pwd, dotfile)

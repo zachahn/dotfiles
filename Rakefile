@@ -10,7 +10,7 @@ end
 desc "setup all symlinks"
 task :link do
   Dir.glob("_*")
-    .map  { |file| Dot.new(file) }
+    .map  { |file| Dotfile.new(file) }
     .map  { |dot|  DotfileLinker.new(dot) }
     .each { |dot|  dot.link }
 end
@@ -50,7 +50,7 @@ end
 desc "delete all symlinks"
 task :clean do
   Dir.glob("_*")
-    .map  { |file| Dot.new(file) }
+    .map  { |file| Dotfile.new(file) }
     .map  { |dot|  DotfileLinker.new(dot) }
     .each { |dot|  dot.unlink }
 end
