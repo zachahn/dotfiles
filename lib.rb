@@ -22,6 +22,14 @@ module Action
   end
 end
 
+class Sloth
+  include Action
+
+  def dsm(name, &block)
+    define_singleton_method(name, &block)
+  end
+end
+
 if $test
   class ActionTest < Minitest::Test
     def test_call_first
