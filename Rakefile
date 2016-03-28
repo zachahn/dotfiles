@@ -15,6 +15,14 @@ task :link do
     .each { |dot|  dot.link }
 end
 
+desc "delete all symlinks"
+task :unlink do
+  Dir.glob("_*")
+    .map  { |file| Dotfile.new(file) }
+    .map  { |dot|  DotfileLinker.new(dot) }
+    .each { |dot|  dot.unlink }
+end
+
 desc "setup vim + vundle"
 task :vim do
   path_to_plug = File.join(ENV["HOME"], ".vim/autoload/plug.vim")
@@ -45,12 +53,4 @@ task :zsh do
   prz.dsm(:first)      { `git clone --recursive #{clone_url} #{path_to_prezto}` }
   prz.dsm(:tail)       { `cd #{path_to_prezto} ; git pull ; git submodule update --recursive` }
   prz.call
-end
-
-desc "delete all symlinks"
-task :clean do
-  Dir.glob("_*")
-    .map  { |file| Dotfile.new(file) }
-    .map  { |dot|  DotfileLinker.new(dot) }
-    .each { |dot|  dot.unlink }
 end
