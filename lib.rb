@@ -64,3 +64,29 @@ if $test
     end
   end
 end
+
+class Dot
+  def initialize(dotfile)
+    link_name = dotfile.sub("_", ".")
+    @target   = File.join(Dir.pwd, dotfile)
+    @link     = File.join(ENV["HOME"], link_name)
+  end
+
+  def status
+    if File.exist?(@link)
+      if File.symlink?(@link)
+        if File.readlink(@link) == @target
+          :linked
+        else
+          :bad_link
+        end
+      else
+        :not_link
+      end
+    else
+      :not_exists
+    end
+  end
+
+  attr_reader :target, :link
+end
