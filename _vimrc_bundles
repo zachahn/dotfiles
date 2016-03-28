@@ -2,7 +2,6 @@ set nocompatible
 filetype off
 
 call plug#begin()
-Plug 'VundleVim/Vundle.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'croaky/vim-colors-github'
