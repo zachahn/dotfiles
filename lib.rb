@@ -32,18 +32,13 @@ class Dotfile
   end
 
   def status
-    if File.exist?(@link)
-      if File.symlink?(@link)
-        if File.readlink(@link) == @target
-          :linked
-        else
-          :bad_link
-        end
-      else
-        :not_link
-      end
+    return :not_exists if !File.exist?(@link)
+    return :not_link   if !File.symlink?(@link)
+
+    if File.readlink(@link) == @target
+      :linked
     else
-      :not_exists
+      :bad_link
     end
   end
 
