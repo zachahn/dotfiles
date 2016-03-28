@@ -3,14 +3,16 @@ module Action
     if first_run?
       first
     else
-      if respond_to?(:tail)
-        tail
-      end
+      try(:tail)
     end
 
-    if respond_to?(:always)
-      always
-    end
+    try(:always)
+  end
+
+  private
+
+  def try(sym)
+    send(sym) if respond_to?(sym)
   end
 end
 
