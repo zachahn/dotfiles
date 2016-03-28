@@ -17,16 +17,16 @@ end
 
 desc "setup vim + vundle"
 task :vim do
-  path_to_vundle = File.join(ENV["HOME"], ".vim/bundle/Vundle.vim")
-  clone_url = "https://github.com/VundleVim/Vundle.vim.git"
+  path_to_plug = File.join(ENV["HOME"], ".vim/autoload/plug.vim")
+  curl_url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
   target = File.join(Dir.pwd, "vim_init"),
   link   = File.join(ENV["HOME"], ".vim/init")
 
   vun = Sloth.new
-  vun.dsm(:first_run?) { !File.exist?(path_to_vundle) }
-  vun.dsm(:first)      { `git clone #{clone_url} #{path_to_vundle}` }
-  vun.dsm(:always)     { `vim +PluginInstall +qall ; vim +PluginUpdate +qall` }
+  vun.dsm(:first_run?) { !File.exist?(path_to_plug) }
+  vun.dsm(:first)      { `curl -fLo #{path_to_plug} --create-dirs #{curl_url}` }
+  vun.dsm(:always)     { `vim +PlugUpgrade +qall ; vim +PlugUpdate +qall` }
   vun.call
 
   ini = Sloth.new
