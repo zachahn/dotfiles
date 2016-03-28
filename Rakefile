@@ -25,7 +25,7 @@ namespace :link do
   end
 end
 
-desc "setup vim + vundle"
+desc "setup/update vim + plug + plugins"
 task :vim do
   path_to_plug = File.join(ENV["HOME"], ".vim/autoload/plug.vim")
   curl_url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
@@ -45,7 +45,7 @@ task :vim do
   ini.call
 end
 
-desc "setup zsh (prezto)"
+desc "setup/update zsh (prezto)"
 task :zsh do
   path_to_prezto = File.join(ENV["HOME"], ".zprezto")
   clone_url      = "https://github.com/sorin-ionescu/prezto.git"
