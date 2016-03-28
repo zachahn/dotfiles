@@ -101,7 +101,7 @@ class DotfileLinker
 
     linker = Sloth.new
     linker.dsm(:first_run?) { dotfile.status == :not_exists }
-    linker.dsm(:first)      { File.link(dotfile.target, dotfile.link) }
+    linker.dsm(:first)      { File.symlink(dotfile.target, dotfile.link) }
     linker.dsm(:always)     { puts "#{dotfile.status} #{dotfile.link}" }
     linker.call
   end
