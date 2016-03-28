@@ -1,3 +1,5 @@
+require_relative "lib"
+
 desc "run all nondestructive tasks"
 task :default do
   Rake::Task["link"].invoke
@@ -7,34 +9,30 @@ end
 
 desc "setup all symlinks"
 task :link do
-  Dotfile.each do |df|
-    if df.exists?
-      fail "#{df.link} already exists" unless df.linked?
-      puts "exists #{df.link}"
-    else
-      df.link!
-      puts "linked #{df.link}"
-    end
-  end
+  Dir.glob("_*")
+    .map  { |file| Dot.new(file) }
+    .map  { |dot|  DotfileLinker.new(dot) }
+    .each { |dot|  dot.link }
 end
 
 desc "setup vim + vundle"
 task :vim do
   path_to_vundle = File.join(ENV["HOME"], ".vim/bundle/Vundle.vim")
+  clone_url = "https://github.com/VundleVim/Vundle.vim.git"
 
-  if File.exist?(path_to_vundle)
-    `vim +PluginUpdate +qall`
-  else
-    `git clone https://github.com/VundleVim/Vundle.vim.git #{path_to_vundle}`
-    `vim +PluginInstall +qall`
-  end
+  target = File.join(Dir.pwd, "vim_init"),
+  link   = File.join(ENV["HOME"], ".vim/init")
 
-  unless File.exist?(File.join(ENV["HOME"], ".vim/init"))
-    File.symlink(
-      File.join(Dir.pwd, "vim_init"),
-      File.join(ENV["HOME"], ".vim/init")
-    )
-  end
+  vun = Sloth.new
+  vun.dsm(:first_run?) { !File.exist?(path_to_vundle) }
+  vun.dsm(:first)      { `git clone #{clone_url} #{path_to_vundle}` }
+  vun.dsm(:always)     { `vim +PluginInstall +qall ; vim +PluginUpdate +qall` }
+  vun.call
+
+  ini = Sloth.new
+  ini.dsm(:first_run?) { !File.exist?(File.join(ENV["HOME"], ".vim/init")) }
+  ini.dsm(:first)      { File.symlink(target, link) }
+  ini.call
 end
 
 desc "setup zsh (prezto)"
@@ -42,18 +40,19 @@ task :zsh do
   path_to_prezto = File.join(ENV["HOME"], ".zprezto")
   clone_url      = "https://github.com/sorin-ionescu/prezto.git"
 
-  unless File.exist?(path_to_prezto)
-    `git clone --recursive #{clone_url} #{path_to_prezto}`
-  end
+  prz = Sloth.new
+  prz.dsm(:first_run?) { !File.exist?(path_to_prezto) }
+  prz.dsm(:first)      { `git clone --recursive #{clone_url} #{path_to_prezto}` }
+  prz.dsm(:tail)       { `cd #{path_to_prezto} ; git pull ; git submodule update --recursive` }
+  prz.call
 end
 
 desc "delete all symlinks"
 task :clean do
-  Dotfile.each do |df|
-    was_unlinked = df.unlink!
-
-    puts "unlinking #{df.link}" if was_unlinked
-  end
+  Dir.glob("_*")
+    .map  { |file| Dot.new(file) }
+    .map  { |dot|  DotfileLinker.new(dot) }
+    .each { |dot|  dot.unlink }
 end
 
 # helpers
