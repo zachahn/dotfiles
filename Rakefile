@@ -36,7 +36,7 @@ task :vim do
   vun = Sloth.new
   vun.dsm(:first_run?) { !File.exist?(path_to_plug) }
   vun.dsm(:first)      { `curl -fLo #{path_to_plug} --create-dirs #{curl_url}` }
-  vun.dsm(:always)     { `vim +PlugUpgrade +PlugUpdate +qall` }
+  vun.dsm(:always)     { system("vim +PlugUpgrade +PlugUpdate +qall") }
   vun.call
 
   ini = Sloth.new
