@@ -29,3 +29,4 @@
 	st = status
 	pf = push --force-with-lease
 	ignorant = "!gitignorant() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push; else git push -u origin ${current} ; fi ; }; gitignorant"
+	trash = "!trash() { git checkout -- ${1+} ${1-.}; }; trash"
