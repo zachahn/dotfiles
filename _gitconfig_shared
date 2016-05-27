@@ -10,7 +10,7 @@
 	co = checkout
 	cob = checkout -b
 	cv = commit -v
-	cva = commit -v -a
+	cva = "!cva() { git add . ; git cv ; }; cva"
 	changes = diff master...HEAD
 	changed-files = diff --name-status master...HEAD
 	cstash = "!cstash() { git add . ; git commit -m 'cstash!' ; }; cstash"
@@ -25,10 +25,12 @@
 	ri = "!gitri() { git rebase -i HEAD~$1; }; gitri"
 	rc = rebase --continue
 	ra = rebase --abort
-	last = log -1 HEAD
+	last = log -1 -p HEAD
 	uncommit = reset --soft HEAD~1
 	unstage = reset HEAD --
 	st = status
 	pf = push --force-with-lease
 	ignorant = "!gitignorant() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push; else git push -u origin ${current} ; fi ; }; gitignorant"
 	trash = "!trash() { git checkout -- ${1+} ${1-.}; }; trash"
+	fu =    "!fu() { git commit --amend --no-edit ; }; fu"
+	fua = "!fua() { git add . ; git fu ; }; fua"
