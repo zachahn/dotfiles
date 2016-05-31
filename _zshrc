@@ -1,7 +1,5 @@
 source ~/.zprezto/runcoms/zshrc
 
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
-
 if is-callable 'dircolors'; then
   alias ls='ls --group-directories-first'
   alias ls='ls --color=auto'
@@ -63,3 +61,4 @@ desktop() {
   fi
 }
 
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
