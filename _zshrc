@@ -39,7 +39,7 @@ alias gac='git commit -av'
 
 # PATH
 
-export PATH=".git/safe/../../bin:$PATH"
+export PATH=".git/safe/../../bin:$HOME/.bin/:$PATH"
 
 # Calculator
 calc() { awk "BEGIN{ print $* }"; }
