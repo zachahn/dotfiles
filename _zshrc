@@ -1,17 +1,5 @@
 source ~/.zprezto/runcoms/zshrc
 
-if is-callable 'dircolors'; then
-  alias ls='ls --group-directories-first'
-  alias ls='ls --color=auto'
-else
-  alias ls='ls -G'
-  export CLICOLOR=1
-  export LSCOLORS=ExFxBxDxCxegedabagacad
-
-  # print ACL
-  alias ls='ls -e'
-fi
-
 unsetopt INC_APPEND_HISTORY
 unsetopt SHARE_HISTORY
 
@@ -48,23 +36,8 @@ export PATH="$HOME/.bin/:$PATH"
 # Calculator
 calc() { awk "BEGIN{ print $* }"; }
 
-# PDF man pages
-pman() { man -t "${1}" | open -f -a /Applications/Preview.app/ }
-
-# Show/hide desktop
-desktop() {
-  if [[ $1 == "show" ]]; then
-    defaults write com.apple.finder CreateDesktop -bool true
-    killall Finder
-  elif [[ $1 == "hide" ]]; then
-    defaults write com.apple.finder CreateDesktop -bool false
-    killall Finder
-  else
-    echo "usage: $0 [show|hide]"
-    echo "  show/hide desktop icons"
-  fi
-}
-
+[[ $(uname -s) == 'Linux' ]] && source ~/.zshrc_linux
+[[ $(uname -s) == 'Darwin' ]] && source ~/.zshrc_osx
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
 export PATH=".git/safe/../../bin:$PATH"
