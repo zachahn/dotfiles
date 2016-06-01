@@ -31,7 +31,7 @@ alias badrockets="rubocop --only Style/HashSyntax -a"
 
 # PATH
 
-export PATH="$HOME/.bin/:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 # Calculator
 calc() { awk "BEGIN{ print $* }"; }
