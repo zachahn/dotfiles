@@ -15,6 +15,7 @@
 	changed-files = diff --name-status master...HEAD
 	cstash = "!cstash() { git add . ; git commit -m 'cstash!' ; }; cstash"
 	df = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
+	everything = log --pretty=fuller --patch
 	lsb = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	lb = log --oneline master..HEAD
 	lp = "!gitlp() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; gitlp"
