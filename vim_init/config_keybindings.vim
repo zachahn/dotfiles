@@ -21,3 +21,5 @@ nnoremap <silent> <Leader>\ :BuffergatorToggle<CR>
 
 " clear highlighting of :set hlsearch (from sensible)
 nnoremap <silent> <Leader>c :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
+map <Leader>* *<C-O>:%s///gn<CR>
