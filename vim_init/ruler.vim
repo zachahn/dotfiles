@@ -1,6 +1,6 @@
 if (exists('+colorcolumn'))
   set colorcolumn=80
-  highlight ColorColumn ctermbg=9
+  highlight ColorColumn ctermbg=LightMagenta
 
   augroup BgHighlight
     autocmd!
