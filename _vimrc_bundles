@@ -30,7 +30,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/camelcasemotion'
+Plug 'chaoren/vim-wordmotion'
 
 " tabular must come before vim-markdown
 Plug 'godlygeek/tabular'
