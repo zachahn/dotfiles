@@ -22,3 +22,25 @@ desktop() {
     echo "  show/hide desktop icons"
   fi
 }
+
+# FIGLET STUFF
+big() {
+  figlet $@ | pbcopy
+}
+
+emojilet() {
+  figlet -f banner3 $* | sed "s/#/:muscle:/g" | sed "s/ /:partyparrot:/g" | pbcopy
+}
+
+wavelet() {
+  figlet -f banner3 $* | \
+    sed "s/#/:muscle:/g" | \
+    sed "1 s/ /:parrot_wave_1:/g" | \
+    sed "2 s/ /:parrot_wave_2:/g" | \
+    sed "3 s/ /:parrot_wave_3:/g" | \
+    sed "4 s/ /:parrot_wave_4:/g" | \
+    sed "5 s/ /:parrot_wave_5:/g" | \
+    sed "6 s/ /:parrot_wave_6:/g" | \
+    sed "7 s/ /:parrot_wave_7:/g" | \
+    pbcopy
+}
