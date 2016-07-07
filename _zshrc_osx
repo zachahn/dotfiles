@@ -34,7 +34,7 @@ emojilet() {
 
 wavelet() {
   figlet -f banner3 $* | \
-    sed "s/#/:muscle:/g" | \
+    sed "s/#/:wiggle_cat:/g" | \
     sed "1 s/ /:parrot_wave_1:/g" | \
     sed "2 s/ /:parrot_wave_2:/g" | \
     sed "3 s/ /:parrot_wave_3:/g" | \
