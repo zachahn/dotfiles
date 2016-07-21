@@ -37,4 +37,4 @@
 	fu =    "!fu() { git commit --amend --no-edit ; }; fu"
 	fua = "!fua() { git add . ; git fu ; }; fua"
 	delete-gone = "!f() { git branch -vv | grep ': gone]' | cut -d' ' -f3 | xargs git branch -d ; } ; f"
-	rom = rebase origin/master
+	rom = "!f() { git fetch ; git rebase origin/master ; } ; f"
