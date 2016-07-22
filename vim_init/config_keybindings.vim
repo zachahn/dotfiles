@@ -23,3 +23,6 @@ nnoremap <silent> <Leader>\ :BuffergatorToggle<CR>
 nnoremap <silent> <Leader>c :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 map <Leader>* *<C-O>:%s///gn<CR>
+
+" ctrl y will copy text to clipboard
+vnoremap <C-Y> :w<Space>!pbcopy<Return><Return>
