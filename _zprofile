@@ -1,3 +1,5 @@
+# vim: syntax=zsh
+
 source ~/.zprezto/runcoms/zprofile
 
 export EDITOR='vim'

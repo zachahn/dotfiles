@@ -1,3 +1,5 @@
+# vim: syntax=zsh
+
 source ~/.zprezto/runcoms/zlogin
 
 [ -f ~/.zlogin_local ] && source ~/.zlogin_local

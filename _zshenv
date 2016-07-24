@@ -1,1 +1,3 @@
+# vim: syntax=zsh
+
 source ~/.zprezto/runcoms/zshenv

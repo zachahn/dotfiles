@@ -1,3 +1,5 @@
+" vim: syntax=vim
+
 if filereadable(expand("~/.vimrc_bundles"))
   source ~/.vimrc_bundles
 endif

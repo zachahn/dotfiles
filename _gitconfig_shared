@@ -38,3 +38,5 @@
 	fua = "!fua() { git add . ; git fu ; }; fua"
 	delete-gone = "!f() { git branch -vv | grep ': gone]' | cut -d' ' -f3 | xargs git branch -d ; } ; f"
 	rom = "!f() { git fetch ; git rebase origin/master ; } ; f"
+
+# vim: syntax=conf

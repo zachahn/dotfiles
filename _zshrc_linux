@@ -1,2 +1,4 @@
+# vim: syntax=zsh
+
 alias ls='ls --group-directories-first'
 alias ls='ls --color=auto'

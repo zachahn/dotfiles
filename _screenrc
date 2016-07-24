@@ -1,3 +1,5 @@
+# vim: syntax=screen
+
 startup_message off
 hardstatus alwayslastline "%{=}%-w%{+b b}%n %t%{-b w}%+w %=%c"
 altscreen on

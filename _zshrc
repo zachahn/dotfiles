@@ -1,3 +1,5 @@
+# vim: syntax=zsh
+
 source ~/.zprezto/runcoms/zshrc
 
 unsetopt INC_APPEND_HISTORY
