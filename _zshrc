@@ -31,15 +31,17 @@ alias badrockets="rubocop --only Style/HashSyntax -a"
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
-# PATH
-
-export PATH="$HOME/.bin:$PATH"
-
 # Calculator
+
 calc() { awk "BEGIN{ print $* }"; }
+
+# OS and local specific configs
 
 [[ $(uname -s) == 'Linux' ]] && source ~/.zshrc_linux
 [[ $(uname -s) == 'Darwin' ]] && source ~/.zshrc_osx
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
+# PATH
+
+export PATH="$HOME/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
