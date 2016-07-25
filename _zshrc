@@ -21,6 +21,7 @@ alias gits='git status'
 alias gs='git status'
 alias gc='git commit -v'
 alias gac='git commit -av'
+alias it=git
 
 # NERD
 
