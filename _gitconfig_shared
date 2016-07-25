@@ -26,6 +26,7 @@
 	nvm = "!nvm() { git uncommit; git unstage ; }; nvm"
 	amend = commit --amend
 	ri = "!gitri() { git rebase -i HEAD~$1; }; gitri"
+	redit = reset HEAD~1
 	rc = rebase --continue
 	ra = rebase --abort
 	last = log --pretty=fuller --patch -1 HEAD
