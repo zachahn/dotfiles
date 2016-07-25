@@ -4,9 +4,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias ls='ls -G'
-
-# print ACL
-alias ls='ls -e'
+alias ls='ls -e' # print ACL
+alias ql='qlmanage -p "$@" >& /dev/null'
 
 # PDF man pages
 pman() { man -t "${1}" | open -f -a /Applications/Preview.app/ }
