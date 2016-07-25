@@ -3,7 +3,6 @@
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-alias ls='ls -G'
 alias ls='ls -e' # print ACL
 alias ql='qlmanage -p "$@" >& /dev/null'
 
