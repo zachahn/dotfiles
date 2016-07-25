@@ -6,6 +6,7 @@
 	prune = true
 
 [alias]
+	ap = add -p
 	bd = branch -d
 	co = checkout
 	cob = checkout -b
