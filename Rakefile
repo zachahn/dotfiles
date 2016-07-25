@@ -13,6 +13,12 @@ task :link do
     .map  { |file| Dotfile.new(file) }
     .map  { |dot|  DotfileLinker.new(dot) }
     .each { |dot|  dot.link }
+
+  bin_local_path = File.join(ENV["HOME"], ".bin_local")
+  bin_local = Sloth.new
+  bin_local.dsm(:first_run?) { !File.exist?(bin_local_path) }
+  bin_local.dsm(:first) { Dir.mkdir(bin_local_path) }
+  bin_local.call
 end
 
 namespace :link do
