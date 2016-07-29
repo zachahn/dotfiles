@@ -5,6 +5,9 @@
 [fetch]
 	prune = true
 
+[core]
+	excludesfile = ~/.gitignore_global
+
 [alias]
 	ap = add -p
 	bd = branch -d
