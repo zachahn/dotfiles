@@ -13,14 +13,9 @@ alias dush='du -sh'
 alias be='bundle exec'
 alias hr="hr '💄 ' '🎀 ' '👠 ' '👛 '"
 alias HR="hr '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 '"
-alias soxxxdreams='ssh -D 9999 za' # socks proxy
 alias reload!='source ~/.zshrc'
 alias update!='zsh -c "cd ~/.dotfiles; rake"'
 alias xxh='ssh -o PubkeyAuthentication=no'
-alias gits='git status'
-alias gs='git status'
-alias gc='git commit -v'
-alias gac='git commit -av'
 alias it=git
 
 # NERD
