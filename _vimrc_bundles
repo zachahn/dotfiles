@@ -33,6 +33,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'chaoren/vim-wordmotion'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " tabular must come before vim-markdown
 Plug 'godlygeek/tabular'
