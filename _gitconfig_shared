@@ -11,6 +11,7 @@
 [alias]
 	ap = add -p
 	bd = branch -d
+	bm = branch -m
 	co = checkout
 	cob = checkout -b
 	cv = commit -v
