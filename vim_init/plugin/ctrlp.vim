@@ -17,3 +17,5 @@ endif
 
 " let g:ctrlp_lazy_update = 150
 let g:ctrlp_max_files = 0
+
+let g:ctrlp_open_new_file = 'r'
