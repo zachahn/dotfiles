@@ -25,4 +25,9 @@ if has("mouse")
 	set mousehide
 endif
 
+augroup unlist_quickfix_from_buffer_list
+  autocmd!
+  autocmd FileType qf set nobuflisted
+augroup END
+
 set hlsearch
