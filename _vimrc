@@ -20,11 +20,6 @@ set linebreak
 " set scrolloff=999
 set scrolloff=7
 
-if has("mouse")
-	set mouse=a
-	set mousehide
-endif
-
 augroup unlist_quickfix_from_buffer_list
   autocmd!
   autocmd FileType qf set nobuflisted
