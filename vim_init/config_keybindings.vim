@@ -22,3 +22,6 @@ map <Leader>* *<C-O>:%s///gn<CR>
 
 " ctrl y will copy text to clipboard
 vnoremap <C-Y> :w<Space>!pbcopy<Return><Return>
+
+" delete buffer without removing split
+nmap <Leader>bd :b#<bar>bd#<CR>
