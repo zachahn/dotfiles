@@ -20,3 +20,9 @@ vnoremap <C-Y> :w<Space>!pbcopy<Return><Return>
 
 " delete buffer without removing split
 nmap <Leader>bd :b#<bar>bd#<CR>
+
+nmap <Leader>t :TestNearest<CR>
+nmap <Leader>T :TestFile<CR>
+nmap <Leader>a :TestSuite<CR>
+nmap <Leader>l :TestLast<CR>
+nmap <Leader>g :TestVisit<CR>
