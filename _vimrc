@@ -26,3 +26,6 @@ augroup unlist_quickfix_from_buffer_list
 augroup END
 
 set hlsearch
+
+set ignorecase
+set smartcase
