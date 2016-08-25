@@ -1,5 +1,7 @@
 " vim: syntax=vim
 
+set nocompatible
+
 if filereadable(expand("~/.vimrc_bundles"))
   source ~/.vimrc_bundles
 endif

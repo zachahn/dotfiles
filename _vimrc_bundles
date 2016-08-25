@@ -1,8 +1,5 @@
 " vim: syntax=vim
 
-set nocompatible
-filetype off
-
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -40,4 +37,3 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
-filetype plugin indent on
