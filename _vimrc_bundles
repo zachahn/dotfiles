@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'chaoren/vim-wordmotion'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 
 " tabular must come before vim-markdown
 Plug 'godlygeek/tabular'

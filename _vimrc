@@ -31,3 +31,5 @@ set hlsearch
 
 set ignorecase
 set smartcase
+
+nnoremap <C-P> :<C-U>FZF<CR>
