@@ -46,29 +46,29 @@ runtime! plugin/sensible.vim
 colorscheme github
 set guifont=Meslo\ LG\ S\ for\ Powerline:h14
 
-set foldmethod=indent   " fold based on indent
-set foldnestmax=10      " deepest fold is 10 levels
-set nofoldenable        " dont fold by default
-set foldlevel=1         " this is just what i use
+highlight WhitespaceEOL ctermbg=Red guibg=Red
+match WhitespaceEOL /\s\+$/
+
+highlight TabCharacters ctermfg=LightMagenta cterm=underline guifg=LightMagenta gui=underline
+2match TabCharacters /^\t\+/
 
 let g:lightline = {
-      \ 'colorscheme': 'Tomorrow',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-    \ }
+  \ 'colorscheme': 'Tomorrow',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'fugitive', 'filename', 'modified' ] ]
+  \ },
+  \ 'component': {
+  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+  \ },
+  \ 'component_visible_condition': {
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \ },
+\ }
 
-" show relative line numbers, but show real line number on active line
 set number
 set relativenumber
-augroup relativenumber_in_normal_mode
+augroup show_relative_line_numbers_but_absolute_on_active_line_and_insert_mode
   autocmd!
   autocmd InsertEnter * :set number
   autocmd InsertEnter * :set norelativenumber
@@ -77,75 +77,49 @@ augroup relativenumber_in_normal_mode
 augroup END
 
 augroup my_file_types
+  autocmd!
   autocmd FileType gitcommit setlocal spell
   autocmd FileType ruby setlocal commentstring=#\ %s
+  autocmd FileType qf set nobuflisted
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
 
-runtime! init/**/*.vim
-
-" Red blocks for whitespace on EOL
-highlight WhitespaceEOL ctermbg=Red guibg=Red
-match WhitespaceEOL /\s\+$/
-
-" Pink underlines on tabs
-highlight TabCharacters ctermfg=LightMagenta cterm=underline
-highlight TabCharacters guifg=LightMagenta gui=underline
-2match TabCharacters /^\t\+/
-
-" show ruler at line 80
 if (exists('+colorcolumn'))
-  set colorcolumn=80
+  set colorcolumn=80 " show ruler on startup
   highlight ColorColumn ctermbg=LightMagenta
 
-  augroup show_ruler_in_active_window
+  augroup show_ruler_only_in_active_window
     autocmd!
     autocmd WinEnter * set colorcolumn=80
     autocmd WinLeave * set colorcolumn=0
   augroup END
 endif
 
-" create new buffers at the bottom or right of current active buffer
-set splitbelow
-set splitright
-
-set cmdheight=2
-
-" netrw
-let g:netrw_banner = 0
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-
-nnoremap - :<C-U>Explore<CR>
-
-let test#strategy = "dispatch"
-
-let g:vim_markdown_folding_disabled=1
-
-
-" better tab complete
+set splitbelow " create buffer at the bottom of active buffer
+set splitright " create buffer at the right of active buffer
 set wildmode=longest,list,full
-
 set linebreak
-
-" set scrolloff=999
 set scrolloff=7
-
-augroup unlist_quickfix_from_buffer_list
-  autocmd!
-  autocmd FileType qf set nobuflisted
-augroup END
-
 set hlsearch
-
+set hidden
+set foldmethod=indent   " fold based on indent
+set foldnestmax=10      " deepest fold is 10 levels
+set nofoldenable        " dont fold by default
+set foldlevel=1         " this is just what i use
 set ignorecase
 set smartcase
+set cmdheight=2
 
+let g:netrw_banner = 0
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let test#strategy = "dispatch"
+let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
 
+nnoremap - :<C-U>Explore<CR>
 nnoremap <C-P> :<C-U>FZF<CR>
 
 " switching buffers
-set hidden
 map <TAB>   :bnext<CR>
 map <S-TAB> :bprev<CR>
 
