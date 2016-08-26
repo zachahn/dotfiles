@@ -2,9 +2,39 @@
 
 set nocompatible
 
-if filereadable(expand("~/.vimrc_bundles"))
-  source ~/.vimrc_bundles
-endif
+call plug#begin()
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'croaky/vim-colors-github'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'janko-m/vim-test'
+Plug 'kchmck/vim-coffee-script'
+Plug 'lambdatoast/elm.vim'
+Plug 'mattn/emmet-vim'
+Plug 'rking/ag.vim'
+Plug 'slim-template/vim-slim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'chaoren/vim-wordmotion'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
+
+" tabular must come before vim-markdown
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+call plug#end()
 
 " load sensible configs early
 runtime! plugin/sensible.vim
