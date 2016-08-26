@@ -21,6 +21,7 @@ alias it='git'
 alias gt='git --no-pager'
 alias tmux='tmux -2'
 alias dot='cd ~/.dotfiles'
+alias tv='tmux new-session vim'
 
 # NERD
 
