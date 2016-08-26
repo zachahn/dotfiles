@@ -135,8 +135,7 @@ nnoremap <C-H> <C-W><C-H>
 " clear highlighting of :set hlsearch (from sensible)
 nnoremap <silent> <Leader>c :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
-" ctrl y will copy text to clipboard
-vnoremap <C-Y> :w<Space>!pbcopy<Return><Return>
+noremap <Leader>y "*y
 
 " delete buffer without removing split
 nnoremap <Leader>bd :b#<bar>bd#<CR>
