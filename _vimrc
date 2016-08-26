@@ -143,3 +143,5 @@ nnoremap <Leader>T :TestFile<CR>
 nnoremap <Leader>a :TestSuite<CR>
 nnoremap <Leader>l :TestLast<CR>
 nnoremap <Leader>g :TestVisit<CR>
+nnoremap <Leader>ve :tabe $MYVIMRC<CR>
+nnoremap <Leader>vs :source $MYVIMRC<CR>
