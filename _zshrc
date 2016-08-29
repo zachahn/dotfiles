@@ -35,6 +35,9 @@ alias badrockets="rubocop --only Style/HashSyntax -a"
 
 calc() { awk "BEGIN{ print $* }"; }
 
+xo()   { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 }
+xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 }
+
 # OS and local specific configs
 
 [[ $(uname -s) == 'Linux' ]] && source ~/.zshrc_linux
