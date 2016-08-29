@@ -22,29 +22,16 @@ alias gt='git --no-pager'
 alias tmux='tmux -2'
 alias dot='cd ~/.dotfiles'
 alias tv='tmux new-session vim'
-
-# NERD
-
 alias badrockets="rubocop --only Style/HashSyntax -a"
 
-# BOXEN
-
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-
-# Calculator
-
 calc() { awk "BEGIN{ print $* }"; }
-
 xo()   { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 }
 xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 }
 
-# OS and local specific configs
-
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 [[ $(uname -s) == 'Linux' ]] && source ~/.zshrc_linux
 [[ $(uname -s) == 'Darwin' ]] && source ~/.zshrc_osx
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
-
-# PATH
 
 export PATH="$HOME/.bin_local:$HOME/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
