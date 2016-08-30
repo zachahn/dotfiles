@@ -16,7 +16,7 @@ Plug 'janko-m/vim-test'
 Plug 'kchmck/vim-coffee-script'
 Plug 'lambdatoast/elm.vim'
 Plug 'mattn/emmet-vim'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'slim-template/vim-slim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-bundler'
@@ -95,8 +95,22 @@ if (exists('+colorcolumn'))
   augroup END
 endif
 
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+
 command! -bang AgFZF call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
 command! Gignorant Dispatch git ignorant
+command! -bang -nargs=* -complete=file Ag           call ack#Ack('grep<bang>', <q-args>)
+command! -bang -nargs=* -complete=file AgAdd        call ack#Ack('grepadd<bang>', <q-args>)
+command! -bang -nargs=* -complete=file AgFromSearch call ack#AckFromSearch('grep<bang>', <q-args>)
+command! -bang -nargs=* -complete=file LAg          call ack#Ack('lgrep<bang>', <q-args>)
+command! -bang -nargs=* -complete=file LAgAdd       call ack#Ack('lgrepadd<bang>', <q-args>)
+command! -bang -nargs=* -complete=file AgFile       call ack#Ack('grep<bang> -g', <q-args>)
+command! -bang -nargs=* -complete=help AgHelp       call ack#AckHelp('grep<bang>', <q-args>)
+command! -bang -nargs=* -complete=help LAgHelp      call ack#AckHelp('lgrep<bang>', <q-args>)
+command! -bang -nargs=*                AgWindow     call ack#AckWindow('grep<bang>', <q-args>)
+command! -bang -nargs=*                LAgWindow    call ack#AckWindow('lgrep<bang>', <q-args>)
 
 set splitbelow " create buffer at the bottom of active buffer
 set splitright " create buffer at the right of active buffer
