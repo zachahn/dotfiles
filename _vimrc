@@ -32,6 +32,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'chaoren/vim-wordmotion'
 Plug 'pangloss/vim-javascript'
+Plug 'sjl/gundo.vim'
 Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 
@@ -162,3 +163,5 @@ nnoremap <Leader>l :TestLast<CR>
 nnoremap <Leader>g :TestVisit<CR>
 nnoremap <Leader>ve :tabe $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
+
+nnoremap <Leader>u :GundoToggle<CR>
