@@ -36,19 +36,11 @@ task :vim do
   path_to_plug = File.join(ENV["HOME"], ".vim/autoload/plug.vim")
   curl_url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
-  target = File.join(Dir.pwd, "vim_init"),
-  link   = File.join(ENV["HOME"], ".vim/init")
-
   vun = Sloth.new
   vun.dsm(:first_run?) { !File.exist?(path_to_plug) }
   vun.dsm(:first)      { `curl -fLo #{path_to_plug} --create-dirs #{curl_url}` }
   vun.dsm(:always)     { system("vim +PlugUpgrade +PlugUpdate +qall") }
   vun.call
-
-  ini = Sloth.new
-  ini.dsm(:first_run?) { !File.exist?(File.join(ENV["HOME"], ".vim/init")) }
-  ini.dsm(:first)      { File.symlink(target, link) }
-  ini.call
 end
 
 desc "setup/update zsh (prezto)"
