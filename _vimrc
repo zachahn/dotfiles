@@ -132,6 +132,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let test#strategy = "dispatch"
 let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
+let g:ack_use_dispatch = 1
 
 nnoremap - :<C-U>Explore<CR>
 nnoremap <C-P> :<C-U>AgFZF<CR>
