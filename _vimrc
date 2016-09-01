@@ -149,19 +149,22 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " clear highlighting of :set hlsearch (from sensible)
-nnoremap <silent> <Leader>c :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nnoremap <silent> <Leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 noremap <Leader>y "*y
 
 " delete buffer without removing split
 nnoremap <Leader>bd :b#<bar>bd#<CR>
 
-nnoremap <Leader>t :TestNearest<CR>
-nnoremap <Leader>T :TestFile<CR>
-nnoremap <Leader>a :TestSuite<CR>
-nnoremap <Leader>l :TestLast<CR>
-nnoremap <Leader>g :TestVisit<CR>
+nnoremap <Leader>tt :TestNearest<CR>
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>ts :TestSuite<CR>
+nnoremap <Leader>tl :TestLast<CR>
+nnoremap <Leader>tv :TestVisit<CR>
 nnoremap <Leader>ve :tabe $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
+
+nnoremap <Leader>cc :sp<CR><C-]>
+nnoremap <Leader>cv :vs<CR><C-]>
 
 nnoremap <Leader>u :GundoToggle<CR>
