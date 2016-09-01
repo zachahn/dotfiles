@@ -2,8 +2,8 @@
 
 set nocompatible
 
-let mapleader = ','
-let maplocalleader = ';'
+let mapleader = ' '
+let maplocalleader = '\'
 
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
