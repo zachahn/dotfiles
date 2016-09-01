@@ -2,8 +2,8 @@
 
 set nocompatible
 
-let mapleader = ","
-let maplocalleader = ";"
+let mapleader = ','
+let maplocalleader = ';'
 
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
@@ -130,7 +130,7 @@ set cmdheight=2
 
 let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-let test#strategy = "dispatch"
+let test#strategy = 'dispatch'
 let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
 let g:ack_use_dispatch = 1
