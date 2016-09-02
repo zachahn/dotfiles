@@ -35,6 +35,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'sjl/gundo.vim'
 Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
+Plug 'zachahn/vim-ack-ag'
 
 " tabular must come before vim-markdown
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
@@ -96,22 +97,8 @@ if (exists('+colorcolumn'))
   augroup END
 endif
 
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
-
 command! -bang AgFZF call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
 command! Gignorant Dispatch git ignorant
-command! -bang -nargs=* -complete=file Ag           call ack#Ack('grep<bang>', <q-args>)
-command! -bang -nargs=* -complete=file AgAdd        call ack#Ack('grepadd<bang>', <q-args>)
-command! -bang -nargs=* -complete=file AgFromSearch call ack#AckFromSearch('grep<bang>', <q-args>)
-command! -bang -nargs=* -complete=file LAg          call ack#Ack('lgrep<bang>', <q-args>)
-command! -bang -nargs=* -complete=file LAgAdd       call ack#Ack('lgrepadd<bang>', <q-args>)
-command! -bang -nargs=* -complete=file AgFile       call ack#Ack('grep<bang> -g', <q-args>)
-command! -bang -nargs=* -complete=help AgHelp       call ack#AckHelp('grep<bang>', <q-args>)
-command! -bang -nargs=* -complete=help LAgHelp      call ack#AckHelp('lgrep<bang>', <q-args>)
-command! -bang -nargs=*                AgWindow     call ack#AckWindow('grep<bang>', <q-args>)
-command! -bang -nargs=*                LAgWindow    call ack#AckWindow('lgrep<bang>', <q-args>)
 
 set splitbelow " create buffer at the bottom of active buffer
 set splitright " create buffer at the right of active buffer
