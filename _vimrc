@@ -16,6 +16,7 @@ Plug 'janko-m/vim-test'
 Plug 'kchmck/vim-coffee-script'
 Plug 'lambdatoast/elm.vim'
 Plug 'mattn/emmet-vim'
+Plug 'zachahn/vim-ack-ag'
 Plug 'mileszs/ack.vim'
 Plug 'slim-template/vim-slim'
 Plug 'terryma/vim-multiple-cursors'
@@ -35,7 +36,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'sjl/gundo.vim'
 Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
-Plug 'zachahn/vim-ack-ag'
 
 " tabular must come before vim-markdown
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
