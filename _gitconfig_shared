@@ -12,6 +12,7 @@
 	templatedir = ~/.git_template
 
 [alias]
+	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
 	ap = add -p
 	bd = branch -d
 	bm = branch -m
@@ -32,6 +33,7 @@
 	lp = "!gitlp() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; gitlp"
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	m = merge
 	nvm = "!nvm() { git uncommit; git unstage ; }; nvm"
 	amend = commit --amend
 	ri = "!gitri() { git rebase -i HEAD~$1; }; gitri"
