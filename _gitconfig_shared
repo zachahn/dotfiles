@@ -21,6 +21,7 @@
 	changes = diff master...HEAD
 	co = checkout
 	cob = checkout -b
+	cp = cherry-pick
 	cstash = "!f() { git add . ; git commit -m 'cstash!' ; }; f"
 	ctags = !.git/hooks/ctags
 	cv = commit -v
