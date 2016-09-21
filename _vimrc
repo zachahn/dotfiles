@@ -101,6 +101,10 @@ endif
 
 command! -bang AgFZF call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
 command! Gignorant Dispatch git ignorant
+command! Vsplit botright vsplit
+command! Split botright split
+command! Vs Vsplit
+command! Sp Split
 
 set splitbelow " create buffer at the bottom of active buffer
 set splitright " create buffer at the right of active buffer
