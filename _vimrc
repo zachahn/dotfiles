@@ -123,6 +123,7 @@ set cmdheight=2
 
 let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_bufsettings = 'nomodifiable nomodified number nobuflisted nowrap readonly'
 let test#strategy = 'dispatch'
 let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
