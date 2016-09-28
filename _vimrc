@@ -9,7 +9,6 @@ call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'croaky/vim-colors-github'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
