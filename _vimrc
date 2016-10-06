@@ -45,6 +45,7 @@ call plug#end()
 
 " load sensible configs early
 runtime! plugin/sensible.vim
+runtime! plugin/sleuth.vim
 
 " style
 colorscheme github
