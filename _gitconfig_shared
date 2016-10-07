@@ -12,6 +12,7 @@
 	templatedir = ~/.git_template
 
 [alias]
+	af = add -f
 	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
 	amend = commit --amend
 	ap = add -p
