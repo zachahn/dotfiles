@@ -18,7 +18,10 @@ rake
   eg `_zshrc` to `~/.zshrc`
 
 - `rake vim`  
-  sets up Vundle.vim
+  sets up vim plugins
 
 - `rake zsh`  
   sets up Prezto
+
+- `rake link:clean` (destructive)  
+  removes symlinks to this directory

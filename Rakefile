@@ -43,7 +43,7 @@ task :vim do
   vun.call
 end
 
-desc "setup/update zsh (prezto)"
+desc "setup/update prezto (zsh)"
 task :zsh do
   path_to_prezto = File.join(ENV["HOME"], ".zprezto")
   clone_url      = "https://github.com/sorin-ionescu/prezto.git"
