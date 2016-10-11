@@ -25,8 +25,8 @@ alias tv='tmux new-session -- vim'
 alias badrockets="rubocop --only Style/HashSyntax -a"
 
 calc() { awk "BEGIN{ print $* }"; }
-xo()   { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 ; }
-xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 ; }
+xo()   { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 || echo "usage: $0 <process name>" ;  }
+xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 || echo "usage: $0 <process name>" ; }
 gn()   { git rev-parse --is-inside-work-tree &> /dev/null && vim "$(git rev-parse --show-toplevel)/.git/NOTES.md" || echo "Not in a git repository" }
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
