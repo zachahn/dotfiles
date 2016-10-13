@@ -134,15 +134,15 @@ let g:ack_use_dispatch = 1
 nnoremap - :<C-U>Explore<CR>
 nnoremap <C-P> :<C-U>AgFZF<CR>
 
-" switching buffers
+" manipulating buffers, splits, tabs
 nnoremap <TAB>   :bnext<CR>
 nnoremap <S-TAB> :bprev<CR>
-
-" navigating splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>te :tabe %<CR>
+nnoremap <Leader>tq :tabc<CR>
 
 " clear highlighting of :set hlsearch (from sensible)
 nnoremap <silent> <Leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
