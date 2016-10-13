@@ -44,6 +44,7 @@
 	lp = "!f() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; f"
 	lsb = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	m = merge
+	ma = merge --abort
 	nvm = "!f() { git uncommit; git unstage ; }; f"
 	pf = push --force-with-lease
 	pu = "!f() { git fetch ; git status ; git merge; }; f"
