@@ -6,6 +6,7 @@ unsetopt INC_APPEND_HISTORY
 unsetopt SHARE_HISTORY
 unsetopt NOHUP
 
+alias e='vim'
 alias lah='ls -lah'
 alias l='ls'
 alias sl='ls'
