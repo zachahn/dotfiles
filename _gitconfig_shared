@@ -24,6 +24,8 @@
 	cob = checkout -b
 	com = checkout master
 	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
 	cstash = "!f() { git add . ; git commit -m 'cstash!' ; }; f"
 	ctags = !.git/hooks/ctags
 	cv = commit -v
