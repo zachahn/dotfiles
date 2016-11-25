@@ -35,7 +35,7 @@
 	dp = "!git --no-pager diff"
 	everything = log --pretty=fuller --patch
 	f = "!f() { git fetch ; git status ; }; f"
-	fu =    "!f() { git commit --amend --no-edit ; }; f"
+	fu = "!f() { git commit --amend --no-edit ; }; f"
 	fua = "!f() { git add . ; git fu ; }; f"
 	ia = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
 	ignorant = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push; else git push -u origin ${current} ; fi ; }; f"

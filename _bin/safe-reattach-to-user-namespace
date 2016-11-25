@@ -6,4 +6,3 @@ if [ -n "$(command -v reattach-to-user-namespace)" ]; then
 else
   exec "$@"
 fi
-
