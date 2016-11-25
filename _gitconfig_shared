@@ -48,6 +48,7 @@
 	m = merge
 	ma = merge --abort
 	nvm = "!f() { git uncommit; git unstage ; }; f"
+	note = "!f() { git_top_level=$(git rev-parse --git-dir); vim \"${git_top_level}/NOTES.md\" ; }; f"
 	pf = push --force-with-lease
 	pu = "!f() { git fetch ; git status ; git pull ; }; f"
 	ra = rebase --abort
