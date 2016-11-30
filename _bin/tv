@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+if [ -n "$(command -v tmux)" ]; then
+  tmux new-session -- vim $@
+else
+  vim $@
+fi
