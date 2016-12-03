@@ -54,3 +54,24 @@ task :zsh do
   prz.dsm(:tail)       { `cd #{path_to_prezto} ; git pull ; git submodule update --recursive` }
   prz.call
 end
+
+desc "setup rbenv"
+task :ruby do
+  path_to_rbenv = File.join(ENV["HOME"], ".rbenv")
+  clone_url     = "https://github.com/rbenv/rbenv.git"
+
+  sloth = Sloth.new
+  sloth.dsm(:first_run?) { !File.exist?(path_to_rbenv) }
+  sloth.dsm(:first)      { `git clone #{clone_url} #{path_to_rbenv}` }
+  sloth.dsm(:tail)       { `cd #{path_to_rbenv} ; git pull` }
+  sloth.call
+
+  path_to_rbinstall = File.join(ENV["HOME"], ".rbenv", "plugins", "ruby-build")
+  clone_urli        = "https://github.com/rbenv/ruby-build.git"
+
+  slothi = Sloth.new
+  slothi.dsm(:first_run?) { !File.exist?(path_to_rbinstall) }
+  slothi.dsm(:first)      { `git clone #{clone_urli} #{path_to_rbinstall}` }
+  slothi.dsm(:tail)       { `cd #{path_to_rbinstall} ; git pull` }
+  slothi.call
+end
