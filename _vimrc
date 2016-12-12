@@ -166,3 +166,5 @@ nnoremap <Leader>cc :sp<CR><C-]>
 nnoremap <Leader>cv :vs<CR><C-]>
 
 nnoremap <Leader>u :GundoToggle<CR>
+
+inoremap jk <Esc>
