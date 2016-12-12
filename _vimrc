@@ -89,6 +89,7 @@ augroup my_file_types
   autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 expandtab
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+  autocmd FileType gitcommit setlocal colorcolumn=72
 augroup END
 
 if (exists('+colorcolumn'))
