@@ -84,12 +84,16 @@ augroup END
 augroup my_file_types
   autocmd!
   autocmd FileType gitcommit setlocal spell
-  autocmd FileType ruby setlocal commentstring=#\ %s
-  autocmd FileType qf set nobuflisted
-  autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 expandtab
-  autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
   autocmd FileType gitcommit setlocal colorcolumn=72
+
+  autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 expandtab
+
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+  autocmd FileType ruby setlocal commentstring=#\ %s
+  autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
+
+  autocmd FileType qf set nobuflisted
 augroup END
 
 if (exists('+colorcolumn'))
