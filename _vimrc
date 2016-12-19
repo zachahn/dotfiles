@@ -88,7 +88,8 @@ augroup my_file_types
 
   autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 expandtab
 
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+  autocmd FileType markdown setlocal spell
+  autocmd FileType markdown setlocal textwidth=80
 
   autocmd FileType ruby setlocal commentstring=#\ %s
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
