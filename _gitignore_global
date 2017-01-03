@@ -4,3 +4,4 @@
 .LSOverride
 Icon
 ._*
+.byebug_history
