@@ -37,7 +37,7 @@
 	f = "!f() { git fetch ; git status ; }; f"
 	fu = "!f() { git commit --amend --no-edit ; }; f"
 	fua = "!f() { git add . ; git fu ; }; f"
-	ia = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
+	ia = "!f() { git ai ; }; f"
 	ignorant = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push; else git push -u origin ${current} ; fi ; }; f"
 	last = log --pretty=fuller --patch -1 HEAD
 	lb = log --oneline origin/master..HEAD
