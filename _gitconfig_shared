@@ -2,6 +2,9 @@
 # [include]
 #	path = .gitconfig_shared
 
+[push]
+	default = simple
+
 [fetch]
 	prune = true
 
