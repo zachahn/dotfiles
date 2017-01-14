@@ -125,7 +125,6 @@ let g:netrw_bufsettings = 'nomodifiable nomodified number nobuflisted nowrap rea
 let test#strategy = 'dispatch'
 let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
-let g:ack_use_dispatch = 1
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = {}
 
