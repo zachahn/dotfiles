@@ -97,7 +97,7 @@ if (exists('+colorcolumn'))
   augroup END
 endif
 
-command! -bang AgFZF call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
+command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
 command! Gignorant Dispatch git ignorant
 command! Vsplit botright vsplit
 command! Split botright split
@@ -158,7 +158,7 @@ let g:fzf_colors = {
   \ 'header':  ['fg', 'Comment'] }
 
 nnoremap - :<C-U>Explore<CR>
-nnoremap <C-P> :<C-U>AgFZF<CR>
+nnoremap <C-P> :<C-U>FuzzySilver<CR>
 
 " manipulating buffers, splits, tabs
 nnoremap <TAB>   :bnext<CR>
