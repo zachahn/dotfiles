@@ -58,20 +58,6 @@ match WhitespaceEOL /\s\+$/
 highlight TabCharacters ctermfg=LightMagenta cterm=underline guifg=LightMagenta gui=underline
 2match TabCharacters /^\t\+/
 
-let g:lightline = {
-  \ 'colorscheme': 'Tomorrow',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'filename', 'modified' ] ]
-  \ },
-  \ 'component': {
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-  \ },
-  \ 'component_visible_condition': {
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \ },
-\ }
-
 set number
 set relativenumber
 augroup show_relative_line_numbers_but_absolute_on_active_line_and_insert_mode
@@ -138,6 +124,20 @@ let test#strategy = 'dispatch'
 let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
 let g:ack_use_dispatch = 1
+
+let g:lightline = {
+  \ 'colorscheme': 'Tomorrow',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'fugitive', 'filename', 'modified' ] ]
+  \ },
+  \ 'component': {
+  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+  \ },
+  \ 'component_visible_condition': {
+  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+  \ },
+\ }
 
 nnoremap - :<C-U>Explore<CR>
 nnoremap <C-P> :<C-U>AgFZF<CR>
