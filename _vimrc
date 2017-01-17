@@ -39,6 +39,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'sjl/gundo.vim'
 Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 " tabular must come before vim-markdown
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
@@ -124,6 +125,8 @@ let test#strategy = 'dispatch'
 let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
 let g:ack_use_dispatch = 1
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_layout = {}
 
 let g:lightline = {
   \ 'colorscheme': 'Tomorrow',
@@ -138,6 +141,20 @@ let g:lightline = {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
 \ }
+
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 nnoremap - :<C-U>Explore<CR>
 nnoremap <C-P> :<C-U>AgFZF<CR>
