@@ -24,6 +24,12 @@ alias tmux='tmux -2'
 alias dot='cd ~/.dotfiles'
 alias badrockets="rubocop --only Style/HashSyntax -a"
 
+if [[ -d "$HOME/Code" ]]; then
+	alias code='cd ~/Code'
+elif [[ -d "$HOME/code" ]]; then
+	alias code='cd ~/code'
+fi
+
 calc() { awk "BEGIN{ print $* }"; }
 xo()   { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 || echo "usage: $0 <process name>" ;  }
 xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 || echo "usage: $0 <process name>" ; }
