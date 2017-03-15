@@ -21,8 +21,8 @@
 	ap = add -p
 	bd = branch -d
 	bm = branch -m
-	changed-files = diff --name-status master...HEAD
-	changes = diff master...HEAD
+	changed-files = diff --name-status origin/master...HEAD
+	changes = diff origin/master...HEAD
 	co = checkout
 	cob = checkout -b
 	com = checkout master
