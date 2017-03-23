@@ -45,7 +45,7 @@
 	last = log --pretty=fuller --patch -1 HEAD
 	lb = log --oneline origin/master..HEAD
 	lg = log --oneline -n 20
-	long = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
 	lp = "!f() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; f"
 	lsb = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	m = merge
