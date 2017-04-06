@@ -50,8 +50,11 @@ runtime! plugin/sensible.vim
 runtime! plugin/sleuth.vim
 
 " style
-colorscheme github
-set guifont=Meslo\ LG\ S\ for\ Powerline:h14
+try
+  colorscheme github
+catch
+  colorscheme default
+endtry
 
 highlight WhitespaceEOL ctermbg=Red guibg=Red
 match WhitespaceEOL /\s\+$/
