@@ -113,6 +113,7 @@ set foldlevel=1         " this is just what i use
 set ignorecase
 set smartcase
 set cmdheight=2
+set shellpipe=2>&1\|\ tee\ 
 
 let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
