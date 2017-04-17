@@ -63,14 +63,6 @@ highlight TabCharacters ctermfg=LightMagenta cterm=underline guifg=LightMagenta 
 2match TabCharacters /^\t\+/
 
 set number
-set relativenumber
-augroup show_relative_line_numbers_but_absolute_on_active_line_and_insert_mode
-  autocmd!
-  autocmd InsertEnter * :set number
-  autocmd InsertEnter * :set norelativenumber
-  autocmd InsertLeave * :set number
-  autocmd InsertLeave * :set relativenumber
-augroup END
 
 augroup my_file_types
   autocmd!
