@@ -156,17 +156,18 @@ let g:fzf_colors = {
 nnoremap - :<C-U>Explore<CR>
 nnoremap <C-P> :<C-U>FuzzySilver<CR>
 
-" manipulating buffers, splits, tabs
+" navigating and manipulating buffers, splits, tabs
 nnoremap <TAB>   :bnext<CR>
 nnoremap <S-TAB> :bprev<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap _ :FzfBuffer<CR>
 nnoremap <Leader>te :tabe %<CR>
 nnoremap <Leader>tq :tabc<CR>
 
-" clear highlighting of :set hlsearch (from sensible)
+" redraw and nohl (from vim-sensible)
 nnoremap <silent> <Leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 noremap <Leader>y "*y
@@ -179,6 +180,7 @@ nnoremap <Leader>tf :TestFile<CR>
 nnoremap <Leader>ts :TestSuite<CR>
 nnoremap <Leader>tl :TestLast<CR>
 nnoremap <Leader>tv :TestVisit<CR>
+
 nnoremap <Leader>ve :tabe $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 
