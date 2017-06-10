@@ -1,0 +1,2 @@
+--- # vim: syntax=yaml
+gem: --no-ri --no-rdoc # See `gem help rdoc`
