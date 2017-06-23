@@ -128,8 +128,10 @@ let g:fzf_layout = {}
 let g:lightline = {
   \ 'colorscheme': 'Tomorrow',
   \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'fugitive', 'filename', 'modified' ] ]
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'fugitive', 'filename', 'modified' ]
+  \   ]
   \ },
   \ 'component': {
   \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
@@ -151,7 +153,8 @@ let g:fzf_colors = {
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+  \ 'header':  ['fg', 'Comment']
+\ }
 
 nnoremap - :<C-U>Explore<CR>
 nnoremap <C-P> :<C-U>FuzzySilver<CR>
