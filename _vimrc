@@ -177,6 +177,8 @@ nnoremap <silent> <Leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR
 
 noremap <Leader>y "*y
 
+nnoremap <Leader><space> @q
+
 " delete buffer without removing split
 nnoremap <Leader>bd :b#<bar>bd#<CR>
 
