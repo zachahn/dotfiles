@@ -78,6 +78,8 @@ augroup my_file_types
   autocmd FileType ruby setlocal commentstring=#\ %s
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
 
+  autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 expandtab
+
   autocmd FileType qf set nobuflisted
   autocmd FileType qf setlocal nowrap
 augroup END
