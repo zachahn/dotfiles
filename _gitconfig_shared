@@ -60,6 +60,7 @@
 	ri = "!f() { git rebase -i HEAD~$1; }; f"
 	ria = "!f() { git rebase -i HEAD~$(git lb | wc -l | awk '{print $1}') ; }; f"
 	rom = "!f() { git fetch ; git rebase origin/master ; } ; f"
+	rs = rebase --skip
 	safe = !mkdir .git/safe
 	st = status
 	trash = "!f() { git checkout -- ${1+$@} ${1-.}; }; f"
