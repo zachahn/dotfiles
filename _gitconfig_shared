@@ -56,7 +56,7 @@
 	pf = push --force-with-lease
 	pu = "!f() { git fetch ; git status ; git pull ; }; f"
 	ra = rebase --abort
-	rc = rebase --continue
+	rc = !git add . && git rebase --continue
 	redit = reset HEAD~1
 	ri = "!f() { git rebase -i HEAD~$1; }; f"
 	ria = "!f() { git rebase -i HEAD~$(git lb | wc -l | awk '{print $1}') ; }; f"
