@@ -21,6 +21,7 @@
 	ap = add -p
 	bd = branch -d
 	bm = branch -m
+	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	changed-files = diff --name-status origin/master...HEAD
 	changes = diff origin/master...HEAD
 	co = checkout
@@ -44,11 +45,10 @@
 	ia = "!f() { git ai ; }; f"
 	ignorant = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push; else git push -u origin ${current} ; fi ; }; f"
 	last = log --pretty=fuller --patch -1 HEAD
-	lb = log --oneline origin/master..HEAD
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
 	lp = "!f() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; f"
-	lsb = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
+	ls = log --oneline origin/master..HEAD
 	m = merge
 	ma = merge --abort
 	nvm = "!f() { git uncommit; git unstage ; }; f"
@@ -59,7 +59,7 @@
 	rc = !git add . && git rebase --continue
 	redit = reset HEAD~1
 	ri = "!f() { git rebase -i HEAD~$1; }; f"
-	ria = "!f() { git rebase -i HEAD~$(git lb | wc -l | awk '{print $1}') ; }; f"
+	ria = "!f() { git rebase -i HEAD~$(git ls | wc -l | awk '{print $1}') ; }; f"
 	rom = "!f() { git fetch ; git rebase origin/master ; } ; f"
 	rs = rebase --skip
 	safe = !mkdir .git/safe
