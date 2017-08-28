@@ -125,7 +125,7 @@ let test#strategy = 'dispatch'
 let g:vim_markdown_folding_disabled=1
 let g:wordmotion_prefix = '<Leader>'
 let g:fzf_command_prefix = 'Fzf'
-let g:fzf_layout = {}
+let g:fzf_layout = { 'down': '~40%' }
 
 let g:lightline = {
   \ 'colorscheme': 'Tomorrow',
