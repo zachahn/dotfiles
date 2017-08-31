@@ -74,6 +74,7 @@ augroup my_file_types
 
   autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal textwidth=80
+  autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 expandtab
 
   autocmd FileType ruby setlocal commentstring=#\ %s
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab
