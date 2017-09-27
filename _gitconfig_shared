@@ -59,6 +59,7 @@
 	ra = rebase --abort
 	rc = !git add . && git rebase --continue
 	redit = reset HEAD~1
+	reorder = "!f() { git rebase --ignore-date HEAD~$1; }; f"
 	ri = "!f() { git rebase -i HEAD~$1; }; f"
 	ria = "!f() { git rebase -i HEAD~$(git ls | wc -l | awk '{print $1}') ; }; f"
 	rom = "!f() { git fetch ; git rebase origin/master ; } ; f"
