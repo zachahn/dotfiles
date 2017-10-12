@@ -1,0 +1,6 @@
+/fzf/
+/plugged/
+/.netrwhist
+
+/autoload/plug.*
+/spell/*.spl
