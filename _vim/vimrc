@@ -9,7 +9,7 @@ call plug#begin()
 Plug 'ivanbrennan/articulate'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'croaky/vim-colors-github'
+Plug 'acarapetis/vim-colors-github'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
