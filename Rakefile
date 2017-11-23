@@ -3,7 +3,6 @@ require_relative "lib"
 desc "run all nondestructive tasks"
 task :default do
   Rake::Task["link"].invoke
-  Rake::Task["vim"].invoke
   Rake::Task["zsh"].invoke
 end
 
@@ -29,18 +28,6 @@ namespace :link do
       .map  { |dot|  DotfileLinker.new(dot) }
       .each { |dot|  dot.unlink }
   end
-end
-
-desc "setup/update vim + plug + plugins"
-task :vim do
-  path_to_plug = File.join(ENV["HOME"], ".vim/autoload/plug.vim")
-  curl_url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-
-  vun = Sloth.new
-  vun.dsm(:first_run?) { !File.exist?(path_to_plug) }
-  vun.dsm(:first)      { `curl -fLo #{path_to_plug} --create-dirs #{curl_url}` }
-  vun.dsm(:always)     { system("vim +PlugUpgrade +PlugUpdate +qall") }
-  vun.call
 end
 
 desc "setup/update prezto (zsh)"
