@@ -17,7 +17,7 @@
 [alias]
 	af = add -f
 	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
-	amend = commit --amend
+	amend = commit --amend --verbose
 	ap = add -p
 	bd = branch -d
 	bm = branch -m
