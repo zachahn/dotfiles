@@ -205,3 +205,6 @@ nnoremap <Leader>cv :vs<CR><C-]>
 nnoremap <Leader>u :GundoToggle<CR>
 
 inoremap jk <Esc>
+
+vnoremap < <gv
+vnoremap > >gv
