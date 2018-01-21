@@ -69,8 +69,6 @@ match ErrorMsg /\s\+$/
 highlight TabCharacters ctermfg=LightMagenta cterm=underline guifg=LightMagenta gui=underline
 match TabCharacters /^\t\+/
 
-set number
-
 augroup my_file_types
   autocmd!
   autocmd FileType gitcommit setlocal spell
@@ -109,6 +107,7 @@ command! Split botright split
 command! Vs Vsplit
 command! Sp Split
 
+set number
 set splitbelow " create buffer at the bottom of active buffer
 set splitright " create buffer at the right of active buffer
 set wildmode=longest,list,full
