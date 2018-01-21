@@ -57,17 +57,18 @@ call plug#end()
 runtime! plugin/sensible.vim
 runtime! plugin/sleuth.vim
 
-" style
+augroup custom_highlights
+  autocmd!
+  autocmd ColorScheme * highlight TabCharacters ctermfg=LightMagenta cterm=underline guifg=LightMagenta gui=underline
+  autocmd BufWinEnter * let w:match_trailing_whitespace=matchadd('ErrorMsg', '\s\+$', -1)
+  autocmd BufWinEnter * let w:match_tab_chars=matchadd('TabCharacters', '\t\+', -1)
+augroup END
+
 try
   colorscheme github
 catch
   colorscheme default
 endtry
-
-match ErrorMsg /\s\+$/
-
-highlight TabCharacters ctermfg=LightMagenta cterm=underline guifg=LightMagenta gui=underline
-match TabCharacters /^\t\+/
 
 augroup my_file_types
   autocmd!
