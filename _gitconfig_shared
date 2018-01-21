@@ -49,7 +49,6 @@
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
 	lp = "!f() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; f"
-	ls = log --oneline origin/master..HEAD
 	m = merge
 	ma = merge --abort
 	nvm = "!f() { git uncommit; git unstage ; }; f"

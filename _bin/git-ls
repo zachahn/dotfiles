@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+if git rev-parse -q --verify origin/master > /dev/null ; then
+	git log --oneline origin/master..HEAD
+else
+	git log --oneline master..HEAD
+fi
