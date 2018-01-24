@@ -1,1 +1,7 @@
 _*_local
+/_vim/plugged
+/_vim/fzf
+/_vim/.netrwhist
+
+/_vim/autoload/plug.*
+/_vim/spell/*.spl
