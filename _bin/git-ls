@@ -5,5 +5,10 @@ set -e
 if git rev-parse -q --verify origin/master > /dev/null ; then
 	git log --oneline origin/master..HEAD
 else
-	git log --oneline master..HEAD
+	CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+	if [ $CURRENT_BRANCH == "master" ]; then
+		git lg
+	else
+		git log --oneline master..HEAD
+	fi
 fi
