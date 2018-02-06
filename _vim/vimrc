@@ -208,3 +208,7 @@ inoremap jk <Esc>
 
 vnoremap < <gv
 vnoremap > >gv
+
+nnoremap H <Nop>
+nnoremap M <Nop>
+nnoremap L <Nop>
