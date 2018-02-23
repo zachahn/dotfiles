@@ -44,7 +44,7 @@
 	fua = "!f() { git add . ; git fu ; }; f"
 	git = !git
 	ia = "!f() { git ai ; }; f"
-	ignorant = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git pf; else git push -u origin ${current} ; fi ; }; f"
+	jedi = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git pf; else git push -u origin ${current} ; fi ; }; f"
 	last = log --pretty=fuller --patch -1 HEAD
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline

@@ -102,7 +102,7 @@ if (exists('+colorcolumn'))
 endif
 
 command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
-command! Gignorant Dispatch git ignorant
+command! Gjedi Dispatch git jedi
 command! Vsplit botright vsplit
 command! Split botright split
 command! Vs Vsplit
