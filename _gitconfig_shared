@@ -30,7 +30,7 @@
 	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
-	cstash = "!f() { git add . ; git commit -m 'cstash!' ; }; f"
+	cstash = "!f() { git add . ; git commit -m 'Stashing changes via commit' ; }; f"
 	ctags = !.git/hooks/ctags
 	cv = commit -v
 	cva = "!f() { git add . ; git cv ; }; f"
