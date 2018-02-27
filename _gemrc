@@ -1,2 +1,3 @@
 --- # vim: syntax=yaml
-gem: --no-ri --no-rdoc # See `gem help rdoc`
+# See `gem help rdoc`
+gem: --no-rdoc
