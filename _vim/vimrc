@@ -11,7 +11,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'ivanbrennan/articulate'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'acarapetis/vim-colors-github'
@@ -23,8 +22,6 @@ Plug 'lambdatoast/elm.vim'
 Plug 'mattn/emmet-vim'
 Plug 'zachahn/vim-ack-ag'
 Plug 'mileszs/ack.vim'
-Plug 'slim-template/vim-slim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -42,7 +39,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 'rust-lang/rust.vim'
-Plug 'chaoren/vim-wordmotion'
 Plug 'pangloss/vim-javascript'
 Plug 'sjl/gundo.vim'
 Plug 'mxw/vim-jsx'
@@ -130,7 +126,6 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_bufsettings = 'nomodifiable nomodified number nobuflisted nowrap readonly'
 let test#strategy = 'dispatch'
 let g:vim_markdown_folding_disabled=1
-let g:wordmotion_prefix = '<Leader>'
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~40%' }
 let g:ackprg = 'ag --vimgrep'
