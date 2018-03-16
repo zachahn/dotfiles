@@ -212,3 +212,6 @@ vnoremap > >gv
 nnoremap H <Nop>
 nnoremap M <Nop>
 nnoremap L <Nop>
+
+nnoremap <silent> <Leader>bn :put =expand('%:t:r')<CR>
+nnoremap <silent> <Leader>cn :put =expand('%:t:r')<CR>:execute "normal \<Plug>Coercem"<CR>
