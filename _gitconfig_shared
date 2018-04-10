@@ -22,6 +22,7 @@
 	bd = branch -d
 	bm = branch -m
 	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
+	buu = branch --unset-upstream
 	changed-files = diff --name-status origin/master...HEAD
 	changes = diff origin/master...HEAD
 	co = checkout
