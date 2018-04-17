@@ -40,6 +40,12 @@ else
 fi
 unset _comp_files
 
+function revert-expand-or-complete {
+  zle expand-or-complete
+}
+
+zle -N expand-or-complete-with-indicator revert-expand-or-complete
+
 #
 # Styles
 #
