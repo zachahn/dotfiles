@@ -11,8 +11,8 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 # PDF man pages
 pman() { man -t "${1}" | open -f -a /Applications/Preview.app/ }
 
-# Show/hide desktop
-desktop() {
+# Show/hide desktop icons
+icons() {
   if [[ $1 == "show" ]]; then
     defaults write com.apple.finder CreateDesktop -bool true
     killall Finder
