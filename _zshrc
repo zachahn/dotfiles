@@ -48,6 +48,13 @@ xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 || echo "usage: $0 <process na
 export PATH="$HOME/.bin_local:$HOME/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
 
-[[ $(uname -s) == "Linux" ]] && source ~/.zshrc_linux
-[[ $(uname -s) == "Darwin" ]] && source ~/.zshrc_osx
+case "$(uname -s)" in
+  Linux)
+    source ~/.zshrc_linux
+    ;;
+  Darwin)
+    source ~/.zshrc_osx
+    ;;
+esac
+
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
