@@ -37,7 +37,6 @@
 	cva = "!f() { git add . ; git cv ; }; f"
 	cvam = !git add . && git cv -m
 	delete-gone = "!f() { git branch -vv | grep ': gone]' | cut -d' ' -f3 | xargs git branch -d ; } ; f"
-	df = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 	dp = "!git --no-pager diff"
 	everything = log --pretty=fuller --patch
 	f = "!f() { git fetch ; git status ; }; f"
