@@ -18,9 +18,9 @@
 	af = add -f
 	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
 	amend = commit --amend --verbose
-	ap = add -p
-	bd = branch -d
-	bm = branch -m
+	ap = add --patch
+	bd = branch --delete
+	bm = branch --move
 	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	buu = branch --unset-upstream
 	changed-files = diff --name-status origin/master...HEAD
@@ -31,11 +31,11 @@
 	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
-	cstash = "!f() { git add . ; git commit -m 'Stashing changes via commit' ; }; f"
+	cstash = "!f() { git add . ; git commit --message 'Stashing changes via commit' ; }; f"
 	ctags = !.git/hooks/ctags
-	cv = commit -v
+	cv = commit --verbose
 	cva = "!f() { git add . ; git cv ; }; f"
-	cvam = !git add . && git cv -m
+	cvam = !git add . && git commit --message
 	delete-gone = "!f() { git branch -vv | grep ': gone]' | cut -d' ' -f3 | xargs git branch -d ; } ; f"
 	dp = "!git --no-pager diff"
 	everything = log --pretty=fuller --patch
@@ -45,7 +45,7 @@
 	git = !git
 	ia = "!f() { git ai ; }; f"
 	jedi = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git pf; else git push -u origin ${current} ; fi ; }; f"
-	last = log --pretty=fuller --patch -1 HEAD
+	last = log --pretty=fuller --patch -n 1 HEAD
 	last-commit-message = show --no-patch --format=format:%B HEAD
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
@@ -61,8 +61,8 @@
 	rc = !git add . && git rebase --continue
 	redit = reset HEAD~1
 	reorder = "!f() { git rebase --ignore-date HEAD~$1; }; f"
-	ri = "!f() { git rebase -i HEAD~$1; }; f"
-	ria = "!f() { git rebase -i HEAD~$(git ls | wc -l | awk '{print $1}') ; }; f"
+	ri = "!f() { git rebase --interactive HEAD~$1; }; f"
+	ria = "!f() { git rebase --interactive HEAD~$(git ls | wc -l | awk '{print $1}') ; }; f"
 	rom = "!f() { git fetch ; git rebase origin/master ; } ; f"
 	rs = rebase --skip
 	safe = !mkdir .git/safe
