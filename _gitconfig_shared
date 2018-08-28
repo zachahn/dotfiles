@@ -36,6 +36,7 @@
 	cv = commit --verbose
 	cva = "!f() { git add . ; git cv ; }; f"
 	cvam = !git add . && git commit --message
+	cvm = commit --message
 	delete-gone = "!f() { git branch -vv | grep ': gone]' | cut -d' ' -f3 | xargs git branch -d ; } ; f"
 	dp = "!git --no-pager diff"
 	everything = log --pretty=fuller --patch
