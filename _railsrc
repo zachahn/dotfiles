@@ -1,1 +1,5 @@
 --database=postgresql
+--skip-coffee
+--skip-action-cable
+--skip-spring
+--skip-listen
