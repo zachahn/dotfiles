@@ -36,6 +36,14 @@ elif [ -d "$HOME/code" ]; then
   alias code='cd ~/code'
 fi
 
+if [ -d "$HOME/Downloads" ]; then
+  alias downloads='cd ~/Downloads'
+fi
+
+if [ -d "$HOME/Desktop" ]; then
+  alias desktop='cd ~/Desktop'
+fi
+
 xo() { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 || echo "usage: $0 <process name>" ;  }
 xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 || echo "usage: $0 <process name>" ; }
 
