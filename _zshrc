@@ -28,7 +28,7 @@ alias it='git'
 alias qgit='git'
 alias gt='git --no-pager'
 alias tmux='tmux -2'
-alias dot='cd ~/.dotfiles'
+alias dots='cd ~/.dotfiles'
 
 if [ -d "$HOME/Code" ]; then
   alias code='cd ~/Code'
