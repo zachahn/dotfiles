@@ -109,6 +109,7 @@ command! Vsplit botright vsplit
 command! Split botright split
 command! Vs Vsplit
 command! Sp Split
+command! Wq x
 
 set number
 set splitbelow " create buffer at the bottom of active buffer
