@@ -1,0 +1,4 @@
+require "rails_helper"
+
+describe [:VIM_EVAL:]Abolish.mixedcase(expand('%:t:r'))[:END_EVAL:] do
+end

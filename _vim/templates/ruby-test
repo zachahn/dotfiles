@@ -1,0 +1,4 @@
+require "test_helper"
+
+class [:VIM_EVAL:]Abolish.mixedcase(expand('%:t:r'))[:END_EVAL:] < TestCase
+end

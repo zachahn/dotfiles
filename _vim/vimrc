@@ -107,6 +107,7 @@ command! Split botright split
 command! Vs Vsplit
 command! Sp Split
 command! Wq x
+command! -nargs=1 Template 0read ~/.vim/templates/<args> | %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
 
 set number
 set splitbelow " create buffer at the bottom of active buffer
@@ -211,6 +212,3 @@ vnoremap > >gv
 nnoremap H <Nop>
 nnoremap M <Nop>
 nnoremap L <Nop>
-
-nnoremap <silent> <Leader>bn :put =expand('%:t:r')<CR>
-nnoremap <silent> <Leader>cn :put =expand('%:t:r')<CR>:execute "normal \<Plug>Coercem"<CR>
