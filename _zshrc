@@ -24,28 +24,20 @@ alias sl='ls'
 alias s='sudo'
 alias dush='du -sh'
 alias be='bundle exec'
-alias hr="hr '💄 ' '🎀 ' '👠 ' '👛 '"
-alias HR="hr '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 ' '💄 ' '🎀 ' '👠 ' '👛 '"
-alias reload!='source ~/.zshrc'
-alias update!='zsh -c "cd ~/.dotfiles; rake"'
-alias xxh='ssh -o PubkeyAuthentication=no'
 alias it='git'
 alias qgit='git'
 alias gt='git --no-pager'
 alias tmux='tmux -2'
 alias dot='cd ~/.dotfiles'
-alias badrockets="rubocop --only Style/HashSyntax -a"
 
-if [[ -d "$HOME/Code" ]]; then
-	alias code='cd ~/Code'
-elif [[ -d "$HOME/code" ]]; then
-	alias code='cd ~/code'
+if [ -d "$HOME/Code" ]; then
+  alias code='cd ~/Code'
+elif [ -d "$HOME/code" ]; then
+  alias code='cd ~/code'
 fi
 
-calc() { awk "BEGIN{ print $* }"; }
-xo()   { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 || echo "usage: $0 <process name>" ;  }
+xo() { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 || echo "usage: $0 <process name>" ;  }
 xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 || echo "usage: $0 <process name>" ; }
-gn()   { git rev-parse --is-inside-work-tree &> /dev/null && vim "$(git rev-parse --show-toplevel)/.git/NOTES.md" || echo "Not in a git repository" }
 
 [ -d ~/.nodenv ] && export PATH="$HOME/.nodenv/bin:$PATH"
 [ -d ~/.nodenv ] && eval "$(nodenv init -)"
@@ -53,7 +45,6 @@ gn()   { git rev-parse --is-inside-work-tree &> /dev/null && vim "$(git rev-pars
 [ -d ~/.rbenv ] && eval "$(rbenv init -)"
 [ -d ~/.cargo/bin ] && export PATH="$HOME/.cargo/bin:$PATH"
 [ -d ~/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
-
 export PATH="$HOME/.bin_local:$HOME/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
 
