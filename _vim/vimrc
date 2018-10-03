@@ -45,6 +45,7 @@ Plug 'sjl/gundo.vim'
 Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
 " load sensible configs early
