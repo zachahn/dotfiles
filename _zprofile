@@ -1,9 +1,0 @@
-# vim: syntax=zsh
-
-source ~/.zprezto/runcoms/zprofile
-
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='less'
-
-[ -f ~/.zprofile_local ] && source ~/.zprofile_local

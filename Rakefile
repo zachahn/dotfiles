@@ -3,7 +3,6 @@ require_relative "lib"
 desc "run all nondestructive tasks"
 task :default do
   Rake::Task["link"].invoke
-  Rake::Task["zsh"].invoke
 end
 
 desc "setup all symlinks"
@@ -28,18 +27,6 @@ namespace :link do
       .map  { |dot|  DotfileLinker.new(dot) }
       .each { |dot|  dot.unlink }
   end
-end
-
-desc "setup/update prezto (zsh)"
-task :zsh do
-  path_to_prezto = File.join(ENV["HOME"], ".zprezto")
-  clone_url      = "https://github.com/sorin-ionescu/prezto.git"
-
-  prz = Sloth.new
-  prz.dsm(:first_run?) { !File.exist?(path_to_prezto) }
-  prz.dsm(:first)      { `git clone --recursive #{clone_url} #{path_to_prezto}` }
-  prz.dsm(:tail)       { `cd #{path_to_prezto} ; git pull ; git submodule update --recursive` }
-  prz.call
 end
 
 desc "setup rbenv"

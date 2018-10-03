@@ -1,10 +1,20 @@
 # vim: syntax=zsh
 
-source ~/.zprezto/runcoms/zshrc
+[ ! -d "$HOME/.zomg/vendor" ] && mkdir -p ~/.zomg/vendor
 
-unsetopt INC_APPEND_HISTORY
-unsetopt SHARE_HISTORY
-unsetopt NOHUP
+setopt INTERACTIVE_COMMENTS
+setopt RC_QUOTES
+
+source ~/.zomg/setup/history-substring-search.zsh
+source ~/.zomg/setup/completions.zsh
+source ~/.zomg/setup/history.zsh
+source ~/.zomg/setup/prompt.zsh
+
+setopt AUTO_CD
+setopt PUSHD_SILENT
+unsetopt CLOBBER
+
+bindkey -e
 
 alias e='tv'
 alias ee='tv `git ls-files --others --modified --exclude-standard`'

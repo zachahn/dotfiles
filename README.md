@@ -20,8 +20,5 @@ rake
 - `rake vim`  
   sets up vim plugins
 
-- `rake zsh`  
-  sets up Prezto
-
 - `rake link:clean` (destructive)  
   removes symlinks to this directory
