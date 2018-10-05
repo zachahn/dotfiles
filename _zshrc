@@ -57,6 +57,8 @@ xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 || echo "usage: $0 <process na
 export PATH="$HOME/.bin_local:$HOME/.bin:$PATH"
 export PATH=".git/safe/../../bin:$PATH"
 
+export FZF_DEFAULT_OPTS="--no-mouse"
+
 case "$(uname -s)" in
   Linux)
     source ~/.zshrc_linux
