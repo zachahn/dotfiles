@@ -1,0 +1,3 @@
+# vim: syntax=zsh
+
+[ -f ~/.zlogin_local ] && source ~/.zlogin_local
