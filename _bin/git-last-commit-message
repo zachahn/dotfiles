@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -euf -o pipefail
+
+if type "pbcopy" > /dev/null; then
+  git show --no-patch --format=format:%B HEAD | tee /dev/tty | pbcopy
+else
+  git show --no-patch --format=format:%B HEAD
+fi

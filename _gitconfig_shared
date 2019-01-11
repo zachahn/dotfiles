@@ -48,7 +48,6 @@
 	ia = "!f() { git ai ; }; f"
 	jedi = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git pf; else git push -u origin ${current} ; fi ; }; f"
 	last = log --pretty=fuller --patch -n 1 HEAD
-	last-commit-message = show --no-patch --format=format:%B HEAD
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
 	lp = "!f() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; f"
