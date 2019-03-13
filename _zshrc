@@ -30,6 +30,7 @@ alias qgit='git'
 alias gt='git --no-pager'
 alias tmux='tmux -2'
 alias dots='cd ~/.dotfiles'
+alias :e='vim'
 
 if [ -d "$HOME/Code" ]; then
   alias code='cd ~/Code'
