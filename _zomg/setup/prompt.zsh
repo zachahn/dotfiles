@@ -7,6 +7,56 @@ SHOW_PROMPT_EMOJI=$+commands[dots]
 
 PROMPT='${PROMPT_EMOJI}${SSH_TTY:+"%F{1}%n@%m%f "}%F{7}${PROMPT_PWD_DIRNAME}${PROMPT_PWD_SEPARATOR}%f${PROMPT_PWD_BASENAME} %F{4}❯%f '
 
+PROMPT_EXIT_YAY=(
+😃
+😄
+😍
+😇
+😎
+🎰
+🎉
+🎊
+🍾
+😂
+😎
+😝
+😋
+😚
+😘
+🤗
+🍰
+🙌
+👌
+👍
+🎁
+🍩
+)
+
+PROMPT_EXIT_SAD=(
+😡
+😱
+😑
+🤦
+💩
+👹
+👎
+🤢
+😢
+😭
+😞
+😿
+🙄
+🤕
+😣
+🤒
+😷
+😵
+🥀
+⛔️
+🛑
+🚧
+☔️
+)
 
 function precmd () {
   # Tab title
@@ -33,7 +83,8 @@ function precmd () {
   fi
 
   if [[ $SHOW_PROMPT_EMOJI ]]; then
-    PROMPT_EMOJI=`echo "\\U$(jot -w %08x -r 1 128512 128592) "`
+    echo $RANDOM > /dev/null
+    PROMPT_EMOJI=`echo "%(?.$PROMPT_EXIT_YAY[$RANDOM % $#PROMPT_EXIT_YAY[@] + 1].$PROMPT_EXIT_SAD[$RANDOM % $#PROMPT_EXIT_SAD[@] + 1]) "`
   else
     PROMPT_EMOJI=''
   fi
