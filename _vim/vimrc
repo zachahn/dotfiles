@@ -42,7 +42,7 @@ Plug 'tpope/vim-rsi'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree'
 Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -231,7 +231,7 @@ nnoremap <Leader>vs :source $MYVIMRC<CR>
 nnoremap <Leader>cc :sp<CR><C-]>
 nnoremap <Leader>cv :vs<CR><C-]>
 
-nnoremap <Leader>u :GundoToggle<CR>
+nnoremap <Leader>u :UndotreeToggle<CR>
 
 inoremap jk <Esc>
 
