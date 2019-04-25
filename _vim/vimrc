@@ -115,6 +115,7 @@ command! Split botright split
 command! Vs Vsplit
 command! Sp Split
 command! Wq x
+command! Wqa xa
 command! -nargs=1 Read 0read ~/.vim/templates/<args> | %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
 command! -nargs=* Figlet call FigletFigletTrioTrioTrio(<q-args>)
 
