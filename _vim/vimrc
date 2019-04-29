@@ -236,6 +236,8 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 
 inoremap jk <Esc>
 
+inoremap <CR> <C-G>u<CR>
+
 vnoremap < <gv
 vnoremap > >gv
 
