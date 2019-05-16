@@ -8,5 +8,5 @@
 Icon
 ._*
 .byebug_history
-.agignore
+.ignore
 .bundle/
