@@ -25,24 +25,23 @@ icons() {
   fi
 }
 
-# FIGLET STUFF
-big() {
-  figlet $@ | pbcopy
-}
-
-emojilet() {
-  figlet -f banner3 $* | sed "s/#/:muscle:/g" | sed "s/ /:partyparrot:/g" | pbcopy
-}
-
+# rp:  https://cultofthepartyparrot.com/parrots/reverseparrot.gif
+# pw1: https://cultofthepartyparrot.com/parrots/wave1parrot.gif
+# pw2: https://cultofthepartyparrot.com/parrots/wave2parrot.gif
+# pw3: https://cultofthepartyparrot.com/parrots/wave3parrot.gif
+# pw4: https://cultofthepartyparrot.com/parrots/wave4parrot.gif
+# pw5: https://cultofthepartyparrot.com/parrots/wave5parrot.gif
+# pw6: https://cultofthepartyparrot.com/parrots/wave6parrot.gif
+# pw7: https://cultofthepartyparrot.com/parrots/wave7parrot.gif
 wavelet() {
   figlet -f banner3 $* | \
-    sed "s/#/:wiggle_cat:/g" | \
-    sed "1 s/ /:parrot_wave_1:/g" | \
-    sed "2 s/ /:parrot_wave_2:/g" | \
-    sed "3 s/ /:parrot_wave_3:/g" | \
-    sed "4 s/ /:parrot_wave_4:/g" | \
-    sed "5 s/ /:parrot_wave_5:/g" | \
-    sed "6 s/ /:parrot_wave_6:/g" | \
-    sed "7 s/ /:parrot_wave_7:/g" | \
+    sed "s/#/:rp:/g" | \
+    sed "1 s/ /:pw1:/g" | \
+    sed "2 s/ /:pw2:/g" | \
+    sed "3 s/ /:pw3:/g" | \
+    sed "4 s/ /:pw4:/g" | \
+    sed "5 s/ /:pw5:/g" | \
+    sed "6 s/ /:pw6:/g" | \
+    sed "7 s/ /:pw7:/g" | \
     pbcopy
 }
