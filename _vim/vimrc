@@ -142,6 +142,7 @@ let test#strategy = 'dispatch'
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~40%' }
 let g:ackprg = 'ag --vimgrep'
+let g:ack_use_dispatch = 1
 
 let g:lightline = {
   \ 'colorscheme': 'Tomorrow',
