@@ -1,32 +1,37 @@
 # vim: syntax=ruby
 
-tap 'beeftornado/rmtree'
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
-tap 'homebrew/services'
-tap 'homebrew/versions'
-tap 'universal-ctags/universal-ctags'
-brew 'aria2'
-brew 'figlet'
-brew 'hr'
-brew 'jq'
-brew 'ncdu'
-brew 'reattach-to-user-namespace'
-brew 'gdbm'
-brew 'openssl'
-brew 'pcre'
-brew 'xz'
-brew 'the_silver_searcher'
-brew 'tmux'
-brew 'tree'
-brew 'vim'
-brew 'wget'
-brew 'zsh'
-brew 'beeftornado/rmtree/brew-rmtree'
-brew 'universal-ctags/universal-ctags/universal-ctags', args: ['HEAD']
-cask 'appcleaner'
-cask 'flux'
-cask 'iterm2'
-cask 'qlmarkdown'
-cask 'qlstephen'
+tap "beeftornado/rmtree"
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "universal-ctags/universal-ctags"
+
+# build tools/conveniences
+brew "autoconf"
+brew "openssl"
+brew "pkg-config"
+brew "readline"
+brew "libyaml"
+
+# utilities
+brew "aria2"
+brew "beeftornado/rmtree/brew-rmtree"
+brew "figlet"
+brew "jq"
+brew "less"
+brew "reattach-to-user-namespace"
+brew "the_silver_searcher"
+brew "tmux"
+brew "tree"
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
+brew "vim"
+brew "wget"
+brew "xz"
+brew "zsh"
+
+# misc software
+cask "appcleaner"
+cask "flux"
+cask "iterm2"
+cask "qlmarkdown"
+cask "qlstephen"
