@@ -108,7 +108,7 @@ augroup auto_exit_insert_caps
   autocmd InsertLeave * set iminsert=0
 augroup END
 
-command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"' }, <bang>0))
+command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'source': 'ag --files-with-matches --filename-pattern "" --ignore "\.git$\|\.hg$\|\.svn$" --skip-vcs-ignores' }, <bang>0))
 command! Gjedi Dispatch git jedi
 command! Vsplit botright vsplit
 command! Split botright split
