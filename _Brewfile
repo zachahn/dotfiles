@@ -1,9 +1,6 @@
 # vim: syntax=ruby
 
 tap "beeftornado/rmtree"
-tap "homebrew/bundle"
-tap "homebrew/core"
-tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 
 # build tools/conveniences
