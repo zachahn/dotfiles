@@ -5,6 +5,7 @@ tap "universal-ctags/universal-ctags"
 
 # build tools/conveniences
 brew "autoconf"
+brew "cmake"
 brew "openssl"
 brew "pkg-config"
 brew "readline"
