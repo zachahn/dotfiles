@@ -3,6 +3,8 @@
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
+export HOMEBREW_NO_ANALYTICS=1
+
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 alias ls='ls -e' # print ACL
