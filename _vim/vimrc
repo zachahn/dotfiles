@@ -47,6 +47,9 @@ Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+if filereadable(expand('~/.vim/vimrc_plugins_local'))
+  source $HOME/.vim/vimrc_plugins_local
+endif
 call plug#end()
 
 " load sensible configs early
@@ -248,3 +251,7 @@ nnoremap L <Nop>
 nnoremap K <Nop>
 
 nnoremap <Del> l
+
+if filereadable(expand('~/.vim/vimrc_local'))
+  source $HOME/.vim/vimrc_local
+endif
