@@ -38,6 +38,12 @@ elif [ -d "$HOME/code" ]; then
   alias code='cd ~/code'
 fi
 
+if [ -d "$HOME/Notes" ]; then
+  alias notes='cd ~/Notes'
+elif [ -d "$HOME/notes" ]; then
+  alias notes='cd ~/notes'
+fi
+
 if [ -d "$HOME/Downloads" ]; then
   alias downloads='cd ~/Downloads'
 fi
