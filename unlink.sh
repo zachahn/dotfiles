@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 current_file=$(readlink -f "$0")
 dotfiles_dir=$(dirname "$current_file")
 
