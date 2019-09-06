@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+dir="$(git rev-parse --show-toplevel)"
+dotignore="$dir/.ignore"
+
+touch "$dotignore"
+
+for ignore_term in tmp log node_modules; do
+  if grep -q "$ignore_term" "$dotignore" ; then
+    echo "exists: $ignore_term"
+  else
+    echo "$ignore_term" >> "$dotignore"
+    echo "added:  $ignore_term"
+  fi
+done
