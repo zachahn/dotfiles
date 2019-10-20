@@ -137,6 +137,7 @@ set shellpipe=2>&1\|\ tee\
 set imsearch=-1
 set keymap=insert_caps
 set nojoinspaces
+set tags^=./.git/tags
 
 let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh']
 let g:netrw_banner = 0
