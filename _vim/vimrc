@@ -11,14 +11,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'acarapetis/vim-colors-github'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
-Plug 'kchmck/vim-coffee-script'
-Plug 'lambdatoast/elm.vim'
 Plug 'mattn/emmet-vim'
 Plug 'zachahn/vim-ack-ag'
 Plug 'mileszs/ack.vim'
