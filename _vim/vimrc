@@ -23,6 +23,7 @@ Plug 'mbbill/undotree' " Navigating mistakes
 " Syntax
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'mxw/vim-jsx'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
 " Ruby
