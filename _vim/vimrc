@@ -11,39 +11,46 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'ConradIrwin/vim-bracketed-paste'
+" UI
 Plug 'acarapetis/vim-colors-github'
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'janko-m/vim-test'
-Plug 'mattn/emmet-vim'
+" Navigation
 Plug 'zachahn/vim-ack-ag'
 Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-rsi'
-Plug 'sunaku/vim-ruby-minitest'
-Plug 'rust-lang/rust.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mbbill/undotree'
-Plug 'mxw/vim-jsx'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree' " Navigating mistakes
+" Syntax
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
+" Ruby
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'sunaku/vim-ruby-minitest'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+" Various utilities I need
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+" Various utilities I really like
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-rsi'
+" Various utilities
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'janko-m/vim-test'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-unimpaired'
 if filereadable(expand('~/.vim/vimrc_plugins_local'))
   source $HOME/.vim/vimrc_plugins_local
 endif
