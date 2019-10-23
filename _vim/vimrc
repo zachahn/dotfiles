@@ -87,6 +87,9 @@ augroup my_file_types
 
   autocmd FileType qf set nobuflisted
   autocmd FileType qf setlocal nowrap
+
+  autocmd BufNewFile,BufRead * if &filetype ==# '' | set filetype=noft | endif
+  autocmd FileType noft setlocal shiftwidth=4 tabstop=4 expandtab
 augroup END
 
 augroup let_me_switch_buffers_without_saving
