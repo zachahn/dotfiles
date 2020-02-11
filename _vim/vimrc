@@ -249,6 +249,7 @@ nnoremap <Leader>cv :vs<CR><C-]>
 nnoremap <Leader>u :UndotreeToggle<CR>
 
 inoremap jk <Esc>
+inoremap Jk <Esc>
 
 inoremap <CR> <C-G>u<CR>
 
