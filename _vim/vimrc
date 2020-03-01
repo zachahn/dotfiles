@@ -264,6 +264,8 @@ vnoremap K <Nop>
 
 nnoremap <Del> l
 
+iabbrev Javascript JavaScript
+
 if filereadable(expand('~/.vim/vimrc_local'))
   source $HOME/.vim/vimrc_local
 endif
