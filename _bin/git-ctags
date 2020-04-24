@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby --disable=gems
+
+GIT_HOOKS_CTAGS = ".git/hooks/ctags"
+
+if File.exist?(GIT_HOOKS_CTAGS)
+  File.delete(GIT_HOOKS_CTAGS)
+  File.delete(".git/hooks/post-commit")
+  File.delete(".git/hooks/post-merge")
+  File.delete(".git/hooks/post-checkout")
+  File.delete(".git/hooks/post-rewrite")
+
+  `git init .`
+end
+
+exec("dtags")

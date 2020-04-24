@@ -10,3 +10,5 @@ Icon
 .byebug_history
 .ignore
 .bundle/
+dtags.yaml
+tags

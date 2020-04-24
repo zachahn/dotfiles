@@ -32,7 +32,6 @@
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
 	cstash = "!f() { git add . ; git commit --message 'Stashing changes via commit' ; }; f"
-	ctags = !.git/hooks/ctags
 	cv = commit --verbose
 	cva = "!f() { git add . ; git cv ; }; f"
 	cvam = !git add . && git commit --message
