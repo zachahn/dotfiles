@@ -95,6 +95,9 @@ augroup my_file_types
 
   autocmd BufNewFile,BufRead * if &filetype ==# '' | set filetype=noft | endif
   autocmd FileType noft setlocal shiftwidth=4 tabstop=4 expandtab
+
+  autocmd BufNewFile,BufRead *.cr set syntax=ruby
+  autocmd BufNewFile,BufRead *.cr setfiletype ruby
 augroup END
 
 augroup let_me_switch_buffers_without_saving
