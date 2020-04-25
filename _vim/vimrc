@@ -26,6 +26,7 @@ Plug 'mxw/vim-jsx'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'aliva/vim-fish', { 'for': 'fish' }
 " Ruby
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sunaku/vim-ruby-minitest'
