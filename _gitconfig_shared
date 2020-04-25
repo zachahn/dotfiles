@@ -46,7 +46,7 @@
 	fua = "!f() { git add . ; git fu ; }; f"
 	git = !git
 	ia = "!f() { git ai ; }; f"
-	jedi = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git pf; else git push -u origin ${current} ; fi ; }; f"
+	jedi = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push --force-with-lease; else git push -u origin ${current} ; fi ; }; f"
 	last = log --pretty=fuller --patch -n 1 HEAD
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
@@ -56,7 +56,7 @@
 	ma = merge --abort
 	nvm = "!f() { git uncommit; git unstage ; }; f"
 	note = "!f() { git_top_level=$(git rev-parse --git-dir); vim \"${git_top_level}/NOTES.md\" ; }; f"
-	pf = push --force-with-lease
+	pf = jedi
 	pu = "!f() { git fetch ; git status ; git pull ; }; f"
 	ra = rebase --abort
 	rc = !git add . && git rebase --continue
