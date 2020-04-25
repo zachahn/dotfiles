@@ -16,6 +16,7 @@
 
 [alias]
 	af = add -f
+	again = "!f() { git checkout master ; git pull ; git delete-merged ; } ; f"
 	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
 	amend = commit --amend --verbose
 	ap = add --patch
