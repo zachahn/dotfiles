@@ -12,3 +12,5 @@ Icon
 .bundle/
 dtags.yaml
 tags
+!tags/
+.dtags-*
