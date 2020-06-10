@@ -14,6 +14,12 @@
 [init]
 	templatedir = ~/.git_template
 
+[diff]
+	wsErrorHighlight = old,new
+
+[log]
+	wsErrorHighlight = old,new
+
 [alias]
 	af = add -f
 	again = "!f() { git checkout master ; git pull ; git delete-merged ; } ; f"
