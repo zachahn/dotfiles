@@ -125,7 +125,6 @@ augroup auto_exit_insert_caps
   autocmd InsertLeave * set iminsert=0
 augroup END
 
-command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'options': '--multi', 'source': 'ag --files-with-matches --filename-pattern "" --ignore "\.git$\|\.hg$\|\.svn$" --skip-vcs-ignores' }, <bang>0))
 command! Gjedi Dispatch git jedi
 command! Vsplit botright vsplit
 command! Split botright split
@@ -153,6 +152,9 @@ set shellpipe=2>&1\|\ tee\
 set imsearch=-1
 set keymap=insert_caps
 set nojoinspaces
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+endif
 
 let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh']
 let g:netrw_banner = 0
@@ -161,8 +163,13 @@ let g:netrw_bufsettings = 'nomodifiable nomodified number nobuflisted nowrap rea
 let test#strategy = 'dispatch'
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~40%' }
-let g:ackprg = 'ag --vimgrep'
-let g:ack_use_dispatch = 1
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --smart-case'
+  let g:ack_use_dispatch = 0
+else
+  let g:ackprg = 'ag --vimgrep'
+  let g:ack_use_dispatch = 1
+endif
 
 let g:lightline = {
   \ 'colorscheme': 'Tomorrow',
@@ -249,7 +256,13 @@ function! FigletFigletTrioTrioTrio(cmd_args)
 endfunction
 
 nnoremap - :<C-U>Explore<CR>
-nnoremap <C-P> :<C-U>FuzzySilver<CR>
+if executable('rg')
+  command! -bang FuzzyRip call fzf#run(fzf#wrap('rg-fzf', { 'options': '--multi', 'source': 'rg --files --ignore-vcs' }, <bang>0))
+  nnoremap <C-P> :<C-U>FuzzyRip<CR>
+else
+  command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'options': '--multi', 'source': 'ag --files-with-matches --filename-pattern "" --ignore "\.git$\|\.hg$\|\.svn$" --skip-vcs-ignores' }, <bang>0))
+  nnoremap <C-P> :<C-U>FuzzySilver<CR>
+endif
 
 " Perform case-sensitive searches when searching with `*` or `#`
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\>\C<CR>
