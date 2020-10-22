@@ -7,7 +7,7 @@ dotignore="$dir/.ignore"
 
 touch "$dotignore"
 
-for ignore_term in tmp log node_modules; do
+for ignore_term in tmp log node_modules tags "!tags/"; do
   if grep -q "$ignore_term" "$dotignore" ; then
     echo "exists: $ignore_term"
   else
