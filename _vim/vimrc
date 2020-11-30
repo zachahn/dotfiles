@@ -11,54 +11,53 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+" Core dependencies
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-projectionist' " Jumping to alternate files with :A
+
 " UI
 Plug 'acarapetis/vim-colors-github'
 Plug 'itchyny/lightline.vim'
+
 " Navigation
-Plug 'zachahn/vim-ack-ag'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree' " Navigating mistakes
+
 " Syntax
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact'] }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact'] }
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'aliva/vim-fish', { 'for': 'fish' }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact'] }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact'] }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 " " Ruby
 Plug 'AndrewRadev/splitjoin.vim', { 'for': 'ruby' }
-Plug 'sunaku/vim-ruby-minitest', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
-" Various utilities I need
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-" Various utilities I really like
-Plug 'tpope/vim-eunuch' " For renaming files, making new directories, etc
-Plug 'tpope/vim-rsi' " Things like C-a to go home, C-e to go end
+Plug 'tpope/vim-rails'
+
 " Various utilities
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-dispatch'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'janko-m/vim-test'
 Plug 'mattn/emmet-vim', { 'for': ['eruby', 'html'] }
-Plug 'tpope/vim-abolish' " I use it to convert snake case to camel case and stuff
+Plug 'stefandtw/quickfix-reflector.vim'
+Plug 'tpope/vim-abolish' " Converting to camel case, etc
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise' " Add end to the end
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'tpope/vim-rhubarb' " GitHub integration
-Plug 'tpope/vim-projectionist' " Jumping to alternate files with :A
-Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-rsi' " Things like C-a to go home, C-e to go end
 Plug 'tpope/vim-sleuth' " Automatically set indentation
-Plug 'tpope/vim-unimpaired' " Pairs of bracket maps
-Plug 'stefandtw/quickfix-reflector.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired' " Pairs of bracket (as in []) maps
+
 if filereadable(expand('~/.vim/vimrc_plugins_local'))
   source $HOME/.vim/vimrc_plugins_local
 endif
 call plug#end()
 
-" load sensible configs early
+" load these early so that they could be overridden
 runtime! plugin/sensible.vim
 runtime! plugin/sleuth.vim
 
@@ -137,7 +136,6 @@ command! Wq x
 command! Wqa xa
 command! Qa qa
 command! -nargs=1 Read 0read ~/.vim/templates/<args> | %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
-command! -nargs=* Figlet call FigletFigletTrioTrioTrio(<q-args>)
 
 set commentstring=#\ %s
 set number
@@ -155,24 +153,15 @@ set shellpipe=2>&1\|\ tee\
 set imsearch=-1
 set keymap=insert_caps
 set nojoinspaces
-if executable('rg')
-  set grepprg=rg\ --vimgrep\ --smart-case
-endif
+
+source $HOME/.vim/misc/ack.vim
+source $HOME/.vim/misc/figlet.vim
+source $HOME/.vim/misc/fzf.vim
 
 let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh']
 let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_bufsettings = 'nomodifiable nomodified number nobuflisted nowrap readonly'
-let test#strategy = 'dispatch'
-let g:fzf_command_prefix = 'Fzf'
-let g:fzf_layout = { 'down': '~40%' }
-if executable('rg')
-  let g:ackprg = 'rg --vimgrep --smart-case'
-  let g:ack_use_dispatch = 0
-else
-  let g:ackprg = 'ag --vimgrep'
-  let g:ack_use_dispatch = 1
-endif
 
 let g:lightline = {
   \ 'colorscheme': 'Tomorrow',
@@ -188,21 +177,6 @@ let g:lightline = {
   \ 'component_visible_condition': {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
-\ }
-
-let g:fzf_colors = {
-  \ 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment']
 \ }
 
 let g:rails_projections = {
@@ -240,32 +214,8 @@ let g:rails_projections = {
   \  }
 \ }
 
-function! FigletFigletTrioTrioTrio(cmd_args)
-  let cmd = 'figlet ' . a:cmd_args
-  " run the figlet command!
-  let output = system(cmd)
-  " remove the final newline
-  let output = substitute(output, '\n$', '', '')
-  " make each line start with a # (except the first)
-  let output = substitute(output, '\n', '\n# ', 'g')
-  " make the first line start with a #
-  let output = substitute(output, '^', '# ', 'g')
-  " remove trailing whitespace, on all lines except the last
-  let output = substitute(output, '\s\+\n', '\n', 'g')
-  " remove trailing whitespace on the last line, and add a trailing newline
-  let output = substitute(output, '\s\+$', '\n', 'g')
-
-  $put=output
-endfunction
 
 nnoremap - :<C-U>Explore<CR>
-if executable('rg')
-  command! -bang FuzzyRip call fzf#run(fzf#wrap('rg-fzf', { 'options': '--multi', 'source': 'rg --files --ignore-vcs' }, <bang>0))
-  nnoremap <C-P> :<C-U>FuzzyRip<CR>
-else
-  command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'options': '--multi', 'source': 'ag --files-with-matches --filename-pattern "" --ignore "\.git$\|\.hg$\|\.svn$" --skip-vcs-ignores' }, <bang>0))
-  nnoremap <C-P> :<C-U>FuzzySilver<CR>
-endif
 
 " Perform case-sensitive searches when searching with `*` or `#`
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\>\C<CR>
