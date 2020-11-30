@@ -1,0 +1,2 @@
+class [:VIM_EVAL:]Abolish.mixedcase(expand('%:t:r'))[:END_EVAL:] < ApplicationController
+end
