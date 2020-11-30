@@ -101,6 +101,9 @@ augroup my_file_types
   autocmd BufNewFile,BufRead *.cr setfiletype ruby
 
   autocmd BufNewFile,BufRead *.json.jb set filetype=ruby
+
+  autocmd FileType typescript setlocal commentstring=//\ %s
+  autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 expandtab
 augroup END
 
 augroup let_me_switch_buffers_without_saving
