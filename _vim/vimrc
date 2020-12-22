@@ -29,9 +29,6 @@ Plug 'mbbill/undotree' " Navigating mistakes
 
 " Syntax
 Plug 'aliva/vim-fish', { 'for': 'fish' }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact'] }
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'javascriptreact'] }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " " Ruby
