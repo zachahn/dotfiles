@@ -208,7 +208,19 @@ let g:rails_projections = {
   \      "  end",
   \      "end",
   \    ]
-  \  }
+  \  },
+  \  "spec/workers/*_spec.rb": {
+  \    "template": [
+  \      "require \"rails_helper\"",
+  \      "",
+  \      "RSpec.describe {camelcase|capitalize|colons} do",
+  \      "  let(:instance) {open} described_class.new {close}",
+  \      "",
+  \      "  describe \"#perform\" do",
+  \      "  end",
+  \      "end",
+  \    ]
+  \  },
 \ }
 
 
