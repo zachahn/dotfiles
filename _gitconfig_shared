@@ -63,8 +63,6 @@
 	rc = !git add . && git rebase --continue
 	redit = reset HEAD~1
 	reorder = "!f() { git rebase --ignore-date HEAD~$1; }; f"
-	ri = "!f() { git rebase --autosquash --interactive HEAD~$1; }; f"
-	ria = "!f() { git rebase --autosquash --interactive HEAD~$(git ls | wc -l | awk '{print $1}') ; }; f"
 	rs = rebase --skip
 	safe = !mkdir .git/safe
 	st = status

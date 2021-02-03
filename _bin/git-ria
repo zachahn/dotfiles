@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+load File.expand_path("../git-lib", File.realpath(__FILE__))
+
+command =
+  if which("git-revise")
+    "revise"
+  else
+    "rebase"
+  end
+
+git_ls = run("git", "ls", say: false)
+exec("git", command, "--autosquash", "--interactive", "HEAD~#{git_ls.split("\n").size}")

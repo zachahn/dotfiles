@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+load File.expand_path("../git-lib", File.realpath(__FILE__))
+
+command =
+  if which("git-revise")
+    "revise"
+  else
+    "rebase"
+  end
+
+count = ARGV.first || ""
+if count !~ /\A\d+\z/
+  puts "Must specify number of commits to rebase"
+  exit 1
+end
+
+exec("git", command, "--autosquash", "--interactive", "HEAD~#{count}")
