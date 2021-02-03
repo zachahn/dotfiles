@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-git branch --merged | grep -E -v "(^\*|master)" | xargs git branch -d
+git branch --merged | grep -E -v "(^\*|master|main)" | xargs git branch -d

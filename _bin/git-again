@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+load File.expand_path("../git-lib", File.realpath(__FILE__))
+
+run("git", "checkout", default_branch)
+run("git", "pull")
+exec("git", "delete-merged")

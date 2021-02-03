@@ -22,7 +22,6 @@
 
 [alias]
 	af = add -f
-	again = "!f() { git checkout master ; git pull ; git delete-merged ; } ; f"
 	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
 	amend = commit --amend --verbose
 	ap = add --patch
@@ -30,11 +29,8 @@
 	bm = branch --move
 	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	buu = branch --unset-upstream
-	changed-files = diff --name-status origin/master...HEAD
-	changes = diff origin/master...HEAD
 	co = checkout
 	cob = checkout -b
-	com = checkout master
 	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
@@ -57,7 +53,6 @@
 	lg = log --oneline -n 20
 	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
 	lp = "!f() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; f"
-	ls-changes = log --pretty=fuller --patch origin/master..HEAD
 	m = merge
 	ma = merge --abort
 	nvm = "!f() { git uncommit; git unstage ; }; f"
@@ -70,7 +65,6 @@
 	reorder = "!f() { git rebase --ignore-date HEAD~$1; }; f"
 	ri = "!f() { git rebase --autosquash --interactive HEAD~$1; }; f"
 	ria = "!f() { git rebase --autosquash --interactive HEAD~$(git ls | wc -l | awk '{print $1}') ; }; f"
-	rom = "!f() { git fetch ; git rebase origin/master ; } ; f"
 	rs = rebase --skip
 	safe = !mkdir .git/safe
 	st = status

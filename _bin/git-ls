@@ -1,14 +1,21 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
 
-set -e
+load File.expand_path("../git-lib", File.realpath(__FILE__))
 
-if git rev-parse -q --verify origin/master > /dev/null ; then
-	git log --oneline origin/master..HEAD
+def ran_ok?(*command)
+  _out, _err, status = popen3(*command, stdout: false, stderr: false)
+
+  status.success?
+end
+
+if ran_ok?("git", "rev-parse", "-q", "--verify", "origin/#{default_branch}")
+  exec("git", "log", "--oneline", "origin/#{default_branch}..HEAD")
 else
-	CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-	if [ $CURRENT_BRANCH == "master" ]; then
-		git lg
-	else
-		git log --oneline master..HEAD
-	fi
-fi
+  current_branch = run("git", "rev-parse", "--abbrev-ref", "HEAD")
+  if current_branch == default_branch
+    exec("git", "lg")
+  else
+    exec("git", "log", "--oneline", "#{default_branch}..HEAD")
+  end
+end
