@@ -5,9 +5,9 @@ load File.expand_path("../git-lib", File.realpath(__FILE__))
 
 command =
   if which("git-revise")
-    "revise"
+    ["revise", "--edit"]
   else
-    "rebase"
+    ["rebase"]
   end
 
 count = ARGV.first || ""
@@ -16,4 +16,4 @@ if count !~ /\A\d+\z/
   exit 1
 end
 
-exec("git", command, "--autosquash", "--interactive", "HEAD~#{count}")
+exec("git", *command, "--autosquash", "--interactive", "HEAD~#{count}")
