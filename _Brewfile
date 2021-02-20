@@ -16,6 +16,7 @@ brew "aria2"
 brew "bat"
 brew "beeftornado/rmtree/brew-rmtree"
 brew "figlet"
+brew "fish"
 brew "git"
 brew "git-absorb"
 brew "git-revise"
@@ -51,3 +52,5 @@ cask "qlstephen"
 cask "ransomwhere"
 cask "rectangle"
 cask "sublime-text"
+mas "AdGuard for Safari", id: 1440147259
+mas "Things 3", id: 904280696
