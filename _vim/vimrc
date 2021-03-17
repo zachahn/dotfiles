@@ -154,6 +154,7 @@ set nojoinspaces
 source $HOME/.vim/misc/ack.vim
 source $HOME/.vim/misc/figlet.vim
 source $HOME/.vim/misc/fzf.vim
+source $HOME/.vim/misc/projectionist.vim
 
 let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh']
 let g:netrw_banner = 0
@@ -175,54 +176,6 @@ let g:lightline = {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
 \ }
-
-let g:rails_projections = {
-  \  "app/controllers/*_controller.rb": {
-  \    "test": [
-  \      "spec/requests/{}_spec.rb",
-  \      "spec/controllers/{}_controller_spec.rb",
-  \      "test/controllers/{}_controller_test.rb"
-  \    ],
-  \    "alternate": [
-  \      "spec/requests/{}_spec.rb",
-  \      "spec/controllers/{}_controller_spec.rb",
-  \      "test/controllers/{}_controller_test.rb"
-  \    ],
-  \  },
-  \  "spec/requests/*_spec.rb": {
-  \    "command": "request",
-  \    "alternate": "app/controllers/{}_controller.rb",
-  \    "template": [
-  \      "require \"rails_helper\"",
-  \      "",
-  \      "RSpec.describe {camelcase|capitalize|colons}Controller, type: :request do",
-  \      "end"
-  \    ]
-  \   },
-  \  "app/workers/*.rb": {
-  \    "template": [
-  \      "class {camelcase|capitalize|colons}",
-  \      "  include Sidekiq::Worker",
-  \      "",
-  \      "  def perform",
-  \      "  end",
-  \      "end",
-  \    ]
-  \  },
-  \  "spec/workers/*_spec.rb": {
-  \    "template": [
-  \      "require \"rails_helper\"",
-  \      "",
-  \      "RSpec.describe {camelcase|capitalize|colons} do",
-  \      "  let(:instance) {open} described_class.new {close}",
-  \      "",
-  \      "  describe \"#perform\" do",
-  \      "  end",
-  \      "end",
-  \    ]
-  \  },
-\ }
-
 
 nnoremap - :<C-U>Explore<CR>
 
