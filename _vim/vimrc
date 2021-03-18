@@ -204,12 +204,6 @@ nnoremap <Leader><space> @q
 " delete buffer without removing split
 nnoremap <Leader>bd :b#<bar>bd#<CR>
 
-nnoremap <Leader>tt :TestNearest<CR>
-nnoremap <Leader>tf :TestFile<CR>
-nnoremap <Leader>ts :TestSuite<CR>
-nnoremap <Leader>tl :TestLast<CR>
-nnoremap <Leader>tv :TestVisit<CR>
-
 nnoremap <Leader>ve :tabe $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 
