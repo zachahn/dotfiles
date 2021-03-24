@@ -9,3 +9,6 @@ _*_local
 /_vim/spell/*.spl
 
 /_zomg/vendor/
+
+/_config/*
+!/_config/git/
