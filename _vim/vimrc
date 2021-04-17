@@ -100,6 +100,8 @@ augroup my_file_types
 
   autocmd FileType typescript setlocal commentstring=//\ %s
   autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 expandtab
+
+  autocmd FileType git-revise-todo setlocal textwidth=72
 augroup END
 
 augroup let_me_switch_buffers_without_saving
