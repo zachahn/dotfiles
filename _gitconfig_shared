@@ -44,7 +44,6 @@
 	everything = log --pretty=fuller --patch
 	exclude = "!mkdir .git/info 2> /dev/null ; touch .git/info/exclude"
 	f = "!f() { git fetch ; git status ; }; f"
-	fu = "!f() { git commit --amend --no-edit ; }; f"
 	fua = "!f() { git add . ; git fu ; }; f"
 	git = !git
 	ia = "!f() { git ai ; }; f"

@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+load File.expand_path("../git-lib", File.realpath(__FILE__))
+
+target =
+  case ARGV.first
+  when /\A\d+\z/
+    "HEAD~#{ARGV.first}"
+  when /~/
+    ARGV.first
+  else
+    "HEAD"
+  end
+
+run("git", "commit", "--fixup", target)
