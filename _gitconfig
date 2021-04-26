@@ -45,7 +45,6 @@
 	everything = log --pretty=fuller --patch
 	exclude = "!mkdir .git/info 2> /dev/null ; touch .git/info/exclude"
 	f = "!f() { git fetch ; git status ; }; f"
-	fua = "!f() { git add . ; git fu ; }; f"
 	git = !git
 	ia = ai
 	jedi = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push --force-with-lease; else git push -u origin ${current} ; fi ; }; f"
