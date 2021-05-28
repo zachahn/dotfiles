@@ -17,6 +17,10 @@
 [log]
 	wsErrorHighlight = old,new
 
+[user]
+	name = Zach Ahn
+	email = engineering@zachahn.com
+
 [alias]
 	af = add -f
 	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
