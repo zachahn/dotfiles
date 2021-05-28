@@ -1,7 +1,3 @@
-# To apply the configuration from this file, append this to your ~/.gitconfig:
-# [include]
-#	path = .gitconfig_shared
-
 [push]
 	default = simple
 
