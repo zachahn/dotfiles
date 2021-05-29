@@ -32,16 +32,17 @@ for src_basename in _* ; do
   dest="$HOME/$dest_basename"
   src="$dotfiles_dir/$src_basename"
 
-  echo "==> $dest"
   if [ -e "$dest" ] ; then
-    echo "    already exists. skipping"
-  else
-    printf "    linking... "
-
-    if ln -s "$src" "$dest" ; then
-      echo "done"
+    if [ -L "$dest" ] ; then
+      echo "NOOP: $dest"
     else
-      echo "failed"
+      echo "UHOH: $dest"
+    fi
+  else
+    if ln -s "$src" "$dest" ; then
+      echo "MADE: $dest"
+    else
+      echo "FAIL: $dest"
     fi
   fi
 done
