@@ -4,4 +4,4 @@
 load File.expand_path("../git-lib", File.realpath(__FILE__))
 
 run("git", "fetch")
-exec("git", "rebase", "origin/#{default_branch}")
+exec("git", "rebase", "#{remote!}/#{default_branch}")
