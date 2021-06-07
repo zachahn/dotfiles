@@ -59,6 +59,28 @@ def default_branch
   end
 end
 
+def has_remote?(remote_name)
+  has_remote = `git remote --verbose` =~ /^#{remote_name}\b/
+
+  if remote_name == "origin" || has_remote
+    return has_remote
+  end
+
+  warn %(warning: remote does not exist: #{remote_name})
+
+  has_remote
+end
+
+def remote!
+  return @remote if @remote
+  return @remote = "origin" if ARGV.empty?
+
+  require "optparse"
+  @remote = "origin"
+  OptionParser.new { |opts| opts.on("--remote=REMOTE") { |r| @remote = r } }.parse!
+  @remote
+end
+
 if $0 == __FILE__
   puts <<~MSG
     #!/usr/bin/env ruby --disable=gems

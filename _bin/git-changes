@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+load File.expand_path("../git-lib", File.realpath(__FILE__))
+
+base =
+  if has_remote?(remote!)
+    "#{remote!}/#{default_branch}"
+  else
+    default_branch
+  end
+
+exec("git", "diff", "#{base}...HEAD")
