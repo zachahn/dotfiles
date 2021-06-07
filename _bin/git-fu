@@ -6,7 +6,7 @@ load File.expand_path("../git-lib", File.realpath(__FILE__))
 target =
   case ARGV.first
   when /\A\d+\z/
-    "HEAD~#{ARGV.first}"
+    "HEAD~#{ARGV.first.to_i - 1}"
   when /~/
     ARGV.first
   else
