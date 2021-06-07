@@ -3,12 +3,5 @@
 
 load File.expand_path("../git-lib", File.realpath(__FILE__))
 
-command =
-  if which("git-revise")
-    ["revise", "--edit"]
-  else
-    ["rebase"]
-  end
-
 git_ls = run("git", "ls", say: false)
-exec("git", *command, "--autosquash", "--interactive", "HEAD~#{git_ls.split("\n").size}")
+exec("git", "ri", git_ls.split("\n").size.to_s, *ARGV)

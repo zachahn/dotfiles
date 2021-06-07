@@ -3,8 +3,10 @@
 
 load File.expand_path("../git-lib", File.realpath(__FILE__))
 
+force_rebase = ARGV.delete("--rebase")
+
 command =
-  if which("git-revise")
+  if which("git-revise") && !force_rebase
     ["revise", "--edit"]
   else
     ["rebase"]
