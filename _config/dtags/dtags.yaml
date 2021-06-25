@@ -1,0 +1,8 @@
+---
+runners:
+  ripper-exclude-vendor:
+    command:
+      - ripper-tags
+      - -R
+      - --exclude=vendor
+      - --tag-file=%{abspath}

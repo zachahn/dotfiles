@@ -10,7 +10,7 @@ Icon
 .byebug_history
 .ignore
 .bundle/
-dtags.yaml
+/dtags.yaml
 tags
 !tags/
 .dtags-*
