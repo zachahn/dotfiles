@@ -81,6 +81,16 @@ def remote!
   @remote
 end
 
+def resolve_target(request)
+  if request =~ /\A\d+\z/
+    "HEAD~#{ARGV.first.to_i - 1}"
+  elsif request == nil
+    "HEAD"
+  else
+    request
+  end
+end
+
 if $0 == __FILE__
   puts <<~MSG
     #!/usr/bin/env ruby --disable=gems
