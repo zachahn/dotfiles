@@ -7,10 +7,10 @@ target =
   case ARGV.first
   when /\A\d+\z/
     "HEAD~#{ARGV.first.to_i - 1}"
-  when /~/
-    ARGV.first
-  else
+  when nil
     "HEAD"
+  else
+    ARGV.first
   end
 
 run("git", "commit", "--fixup", target)
