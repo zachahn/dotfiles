@@ -86,6 +86,6 @@ if $0 == __FILE__
     #!/usr/bin/env ruby --disable=gems
     # frozen_string_literal: true
 
-    load File.expand_path("../git-lib", File.realpath(__FILE__))
+    require_relative "./git-lib"
   MSG
 end
