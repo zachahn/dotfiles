@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+require_relative "./git-lib"
+
+def ran_ok?(*command)
+  _out, _err, status = popen3(*command, stdout: false, stderr: false)
+
+  status.success?
+end
+
+if ran_ok?("git", "rev-parse", "-q", "--verify", "#{remote!}/#{default_branch}")
+  exec("git", "log", "--patch", "--reverse", "#{remote!}/#{default_branch}..HEAD")
+else
+  current_branch = run("git", "rev-parse", "--abbrev-ref", "HEAD")
+  if current_branch == default_branch
+    puts "No changes"
+    exit 1
+  else
+    exec("git", "log", "--patch", "--reverse", "#{default_branch}..HEAD")
+  end
+end
