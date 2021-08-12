@@ -30,7 +30,6 @@
 	bm = branch --move
 	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
 	buu = branch --unset-upstream
-	co = checkout
 	cob = checkout -b
 	cp = cherry-pick
 	cpa = cherry-pick --abort
