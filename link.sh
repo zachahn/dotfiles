@@ -34,15 +34,15 @@ for src_basename in _* ; do
 
   if [ -e "$dest" ] ; then
     if [ -L "$dest" ] ; then
-      echo "NOOP: $dest"
+      echo "GOOD - NOOP: $dest"
     else
-      echo "UHOH: $dest"
+      echo "FAIL - CONFLICT: $dest"
     fi
   else
     if ln -s "$src" "$dest" ; then
-      echo "MADE: $dest"
+      echo "GOOD - MADE: $dest"
     else
-      echo "FAIL: $dest"
+      echo "FAIL - LINK ERR: $dest"
     fi
   fi
 done
