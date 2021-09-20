@@ -1,7 +1,7 @@
 _*_local
-/_vim/plugged
-/_vim/fzf
 /_vim/.netrwhist
+/_vim/fzf
+/_vim/plugged
 /_vim/vimrc_local
 /_vim/vimrc_plugins_local
 
@@ -11,5 +11,5 @@ _*_local
 /_zomg/vendor/
 
 /_config/*
-!/_config/git/
 !/_config/dtags/
+!/_config/git/
