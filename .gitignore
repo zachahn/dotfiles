@@ -13,5 +13,6 @@ _*_local
 /_config/*
 !/_config/bat/
 !/_config/dtags/
+!/_config/fish/
 !/_config/git/
 !/_config/nvim/
