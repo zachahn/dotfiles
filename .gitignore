@@ -13,3 +13,4 @@ _*_local
 /_config/*
 !/_config/dtags/
 !/_config/git/
+!/_config/nvim/
