@@ -66,6 +66,8 @@ export PATH=".git/safe/../../bin:$PATH"
 
 export FZF_DEFAULT_OPTS="--no-mouse"
 
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 export BAT_CONFIG_PATH="$HOME/.batrc"
 
 case "$(uname -s)" in

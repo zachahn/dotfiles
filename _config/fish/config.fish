@@ -1,6 +1,7 @@
 set fish_function_path $__fish_config_dir/fn $fish_function_path
 
 set -Ux EDITOR vim
+set -Ux RIPGREP_CONFIG_PATH ~/.ripgreprc
 
 alias :e="vim"
 alias be="bundle exec"
