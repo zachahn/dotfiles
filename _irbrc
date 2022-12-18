@@ -1,14 +1,5 @@
 # vim: syntax=ruby
 
-if File.basename($0) == "irb" && Gem::Specification.find_all_by_name("pry")
-  begin
-    require "pry"
-    Pry.start
-    exit
-  rescue
-  end
-end
-
 require "irb/completion"
 require "irb/ext/save-history"
 
