@@ -32,12 +32,6 @@ alias tmux='tmux -2'
 alias dots='cd ~/.dotfiles'
 alias :e='vim'
 
-if [ -d "$HOME/Code" ]; then
-  alias code='cd ~/Code'
-elif [ -d "$HOME/code" ]; then
-  alias code='cd ~/code'
-fi
-
 if [ -d "$HOME/Notes" ]; then
   alias notes='cd ~/Notes'
 elif [ -d "$HOME/notes" ]; then

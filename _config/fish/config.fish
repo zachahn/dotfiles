@@ -11,12 +11,6 @@ alias it="git"
 alias lah="ls -lah"
 alias qgit="git"
 
-if test -d ~/Code
-  alias code="cd ~/Code"
-else if test -d ~/code
-  alias code="cd ~/code"
-end
-
 if test -d ~/Notes
   alias notes="cd ~/Notes"
 else if test -d ~/notes
