@@ -32,6 +32,11 @@ Plug 'mbbill/undotree' " Navigating mistakes
 " Syntax
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
+Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'mracos/mermaid.vim', { 'for': 'mermaid' }
 
 " " Ruby
 Plug 'AndrewRadev/splitjoin.vim', { 'for': 'ruby' }
@@ -161,7 +166,11 @@ source $HOME/.vim/misc/figlet.vim
 source $HOME/.vim/misc/fzf.vim
 source $HOME/.vim/misc/projectionist.vim
 
-let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh']
+if executable('gtar')
+  let g:tar_cmd='/usr/local/bin/gtar'
+endif
+
+let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh', 'mermaid']
 let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_bufsettings = 'nomodifiable nomodified number nobuflisted nowrap readonly'
