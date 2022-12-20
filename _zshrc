@@ -5,6 +5,7 @@
 setopt INTERACTIVE_COMMENTS
 setopt RC_QUOTES
 
+source ~/.zomg/setup/autosuggestions.zsh
 source ~/.zomg/setup/history-substring-search.zsh
 source ~/.zomg/setup/completions.zsh
 source ~/.zomg/setup/history.zsh
