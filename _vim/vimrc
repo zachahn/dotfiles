@@ -132,6 +132,7 @@ source $HOME/.vim/more/ack.vim
 source $HOME/.vim/more/figlet.vim
 source $HOME/.vim/more/filetypes.vim
 source $HOME/.vim/more/fzf.vim
+source $HOME/.vim/more/lightline.vim
 source $HOME/.vim/more/projectionist.vim
 
 if executable('gtar')
@@ -142,22 +143,6 @@ let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh', 'mermaid']
 let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_bufsettings = 'nomodifiable nomodified number nobuflisted nowrap readonly'
-
-let g:lightline = {
-  \ 'colorscheme': 'Tomorrow',
-  \ 'active': {
-  \   'left': [
-  \     [ 'mode', 'paste' ],
-  \     [ 'fugitive', 'filename', 'modified' ]
-  \   ]
-  \ },
-  \ 'component': {
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-  \ },
-  \ 'component_visible_condition': {
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \ },
-\ }
 
 nnoremap - :<C-U>Explore<CR>
 
