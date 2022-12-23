@@ -121,7 +121,7 @@ set smartcase
 set cmdheight=2
 set shellpipe=2>&1\|\ tee\ 
 set imsearch=-1
-" set keymap=insert_caps
+set keymap=insert_caps
 set nojoinspaces
 set mouse=
 
