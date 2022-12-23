@@ -28,7 +28,7 @@
 	ap = add --patch
 	bd = branch --delete
 	bm = branch --move
-	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(refname:short)' refs/heads/
+	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(if)%(upstream:track)%(then)%(upstream:track)     %(end)%(refname:short)' refs/heads/
 	buu = branch --unset-upstream
 	cob = checkout -b
 	cp = cherry-pick
