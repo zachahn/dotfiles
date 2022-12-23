@@ -65,14 +65,9 @@ call plug#end()
 runtime! plugin/sensible.vim
 runtime! plugin/sleuth.vim
 
-syntax match HighlightTabCharacters '\t\+'
-syntax match HighlightTrailingWhitespace '\s\+$'
-
-augroup highlight_whitespace
-  autocmd!
-  autocmd ColorScheme * highlight HighlightTabCharacters ctermfg=LightMagenta cterm=underline guifg=LightMagenta gui=underline
-  autocmd ColorScheme * highlight HighlightTrailingWhitespace ctermbg=Red
-augroup END
+set list
+set listchars=tab:‗‗
+match errorMsg /\s\+$/
 
 try
   colorscheme github
