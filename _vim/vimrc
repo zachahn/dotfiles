@@ -57,9 +57,6 @@ Plug 'tpope/vim-unimpaired' " Pairs of bracket (as in []) maps
 if filereadable(expand('~/.vim/vimrc_plugins_local'))
   source $HOME/.vim/vimrc_plugins_local
 endif
-if has('nvim')
-  source $HOME/.vim/neovim_plugins.vim
-end
 call plug#end()
 
 " load these early so that they could be overridden
