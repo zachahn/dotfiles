@@ -158,10 +158,10 @@ set imsearch=-1
 set nojoinspaces
 set mouse=
 
-source $HOME/.vim/misc/ack.vim
-source $HOME/.vim/misc/figlet.vim
-source $HOME/.vim/misc/fzf.vim
-source $HOME/.vim/misc/projectionist.vim
+source $HOME/.vim/more/ack.vim
+source $HOME/.vim/more/figlet.vim
+source $HOME/.vim/more/fzf.vim
+source $HOME/.vim/more/projectionist.vim
 source $HOME/.config/nvim/more/lsp.lua
 
 if executable('gtar')

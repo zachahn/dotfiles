@@ -161,10 +161,10 @@ set imsearch=-1
 set keymap=insert_caps
 set nojoinspaces
 
-source $HOME/.vim/misc/ack.vim
-source $HOME/.vim/misc/figlet.vim
-source $HOME/.vim/misc/fzf.vim
-source $HOME/.vim/misc/projectionist.vim
+source $HOME/.vim/more/ack.vim
+source $HOME/.vim/more/figlet.vim
+source $HOME/.vim/more/fzf.vim
+source $HOME/.vim/more/projectionist.vim
 
 if executable('gtar')
   let g:tar_cmd='/usr/local/bin/gtar'
