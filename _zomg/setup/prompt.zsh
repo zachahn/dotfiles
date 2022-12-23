@@ -1,9 +1,14 @@
 autoload -Uz promptinit
+autoload -Uz vcs_info
+
 promptinit
 
 setopt prompt_subst
 
-PROMPT='${PROMPT_STATUS}${SSH_TTY:+"%F{1}%n@%m%f "}%F{7}${PROMPT_PWD_DIRNAME}${PROMPT_PWD_SEPARATOR}%f${PROMPT_PWD_BASENAME} %F{4}❯%f '
+zstyle ':vcs_info:git:*' formats ' %b'
+zstyle ':vcs_info:git:*' actionformats ' %b|%a'
+
+PROMPT='${PROMPT_STATUS}${SSH_TTY:+"%F{1}%n@%m%f "}%F{7}${PROMPT_PWD_DIRNAME}${PROMPT_PWD_SEPARATOR}%f${PROMPT_PWD_BASENAME}${vcs_info_msg_0_} %F{4}❯%f '
 
 function precmd () {
   PROMPT_STATUS='%(?..[%?] )'
@@ -30,4 +35,6 @@ function precmd () {
     PROMPT_PWD_SEPARATOR="/"
     PROMPT_PWD_BASENAME="${pwd_basename}"
   fi
+
+  vcs_info
 }
