@@ -80,12 +80,6 @@ augroup let_me_switch_buffers_without_saving
   autocmd BufEnter,BufWinEnter * set hidden
 augroup END
 
-augroup auto_exit_insert_caps
-  autocmd!
-  autocmd BufEnter,BufWinEnter * set iminsert=0
-  autocmd InsertLeave * set iminsert=0
-augroup END
-
 command! Gjedi Dispatch git jedi
 command! Vsplit botright vsplit
 command! Split botright split
@@ -109,12 +103,11 @@ set ignorecase " Ignorecase and smartcase work together
 set smartcase
 set cmdheight=2
 set shellpipe=2>&1\|\ tee\ 
-set imsearch=-1
-set keymap=insert_caps
 set nojoinspaces
 set mouse=
 
 source $HOME/.vim/more/ack.vim
+source $HOME/.vim/more/caps.vim
 source $HOME/.vim/more/colorcolumn.vim
 source $HOME/.vim/more/figlet.vim
 source $HOME/.vim/more/filetypes.vim
