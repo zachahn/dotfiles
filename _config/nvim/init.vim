@@ -80,17 +80,6 @@ augroup let_me_switch_buffers_without_saving
   autocmd BufEnter,BufWinEnter * set hidden
 augroup END
 
-if (exists('+colorcolumn'))
-  set colorcolumn=80 " show ruler on startup
-  highlight ColorColumn ctermbg=LightMagenta
-
-  augroup show_ruler_only_in_active_window
-    autocmd!
-    autocmd WinEnter * set colorcolumn=80
-    autocmd WinLeave * set colorcolumn=0
-  augroup END
-endif
-
 augroup auto_exit_insert_caps
   autocmd!
   autocmd BufEnter,BufWinEnter * set iminsert=0
@@ -126,6 +115,7 @@ set nojoinspaces
 set mouse=
 
 source $HOME/.vim/more/ack.vim
+source $HOME/.vim/more/colorcolumn.vim
 source $HOME/.vim/more/figlet.vim
 source $HOME/.vim/more/filetypes.vim
 source $HOME/.vim/more/fzf.vim
