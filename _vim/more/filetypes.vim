@@ -28,5 +28,6 @@ augroup my_file_types
   autocmd FileType typescript setlocal commentstring=//\ %s
   autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 expandtab
 
+  autocmd BufRead,BufNewFile git-revise-todo setfiletype git-revise-todo
   autocmd FileType git-revise-todo setlocal textwidth=72
 augroup END
