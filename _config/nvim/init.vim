@@ -106,6 +106,7 @@ set nojoinspaces
 set mouse=
 
 source $HOME/.vim/more/ack.vim
+source $HOME/.vim/more/base64.vim
 source $HOME/.vim/more/caps.vim
 source $HOME/.vim/more/colorcolumn.vim
 source $HOME/.vim/more/figlet.vim
@@ -172,9 +173,6 @@ vnoremap K <Nop>
 nnoremap <Del> l
 
 iabbrev Javascript JavaScript
-
-vnoremap <Leader>d64 c<c-r>=system('base64 --decode', @")<cr><esc>
-vnoremap <Leader>e64 c<c-r>=system('base64', @")<cr><esc>
 
 if filereadable(expand('~/.config/nvim/vimrc_local'))
   source $HOME/.config/nvim/vimrc_local
