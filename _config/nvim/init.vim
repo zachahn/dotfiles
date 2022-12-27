@@ -15,21 +15,24 @@ call plug#begin()
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-projectionist' " Jumping to alternate files with :A
+Plug 'tpope/vim-surround'
+Plug 'neovim/nvim-lspconfig'
 
 " UI
 Plug 'acarapetis/vim-colors-github'
 Plug 'itchyny/lightline.vim'
-
-Plug 'neovim/nvim-lspconfig'
 
 " Navigation
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.vim/fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree' " Navigating mistakes
+Plug 'tpope/vim-projectionist' " Jumping to alternate files with :A
 
 " Syntax
+Plug 'tpope/vim-sleuth' " Automatically set indentation
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise' " Add end to the end
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
@@ -38,7 +41,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mracos/mermaid.vim', { 'for': 'mermaid' }
 
-" " Ruby
+" Ruby
 Plug 'AndrewRadev/splitjoin.vim', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 
@@ -46,14 +49,10 @@ Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim', { 'for': ['eruby', 'html'] }
 Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'tpope/vim-abolish' " Converting to camel case, etc
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise' " Add end to the end
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'tpope/vim-rhubarb' " GitHub integration
 Plug 'tpope/vim-rsi' " Things like C-a to go home, C-e to go end
-Plug 'tpope/vim-sleuth' " Automatically set indentation
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired' " Pairs of bracket (as in []) maps
 
 if filereadable(expand('~/.config/nvim/vimrc_plugins_local'))
