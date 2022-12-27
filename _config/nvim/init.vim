@@ -135,8 +135,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap _ :FzfBuffer<CR>
-nnoremap <Leader>te :tabe %<CR>
-nnoremap <Leader>tq :tabc<CR>
 
 " redraw and nohl (from vim-sensible)
 nnoremap <silent> <Leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
@@ -147,12 +145,6 @@ nnoremap <Leader><space> @q
 
 " delete buffer without removing split
 nnoremap <Leader>bd :b#<bar>bd#<CR>
-
-nnoremap <Leader>ve :tabe $MYVIMRC<CR>
-nnoremap <Leader>vs :source $MYVIMRC<CR>
-
-nnoremap <Leader>cc :sp<CR><C-]>
-nnoremap <Leader>cv :vs<CR><C-]>
 
 nnoremap <Leader>u :UndotreeToggle<CR>
 
