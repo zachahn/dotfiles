@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+require_relative "./git-lib"
+
+run("git", "fetch")
+exec("git", "reset", "--hard", "#{remote!}/#{current_branch!}")

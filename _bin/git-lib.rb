@@ -91,6 +91,17 @@ def resolve_target(request)
   end
 end
 
+def current_branch!
+  name = `git rev-parse --abbrev-ref HEAD`.strip
+
+  if name == "HEAD"
+    warn "warning: not on branch"
+    exit(1)
+  end
+
+  name
+end
+
 if $0 == __FILE__
   puts <<~MSG
     #!/usr/bin/env ruby --disable=gems
