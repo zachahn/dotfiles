@@ -1,36 +1,22 @@
-# vim: syntax=ruby
-
-tap "beeftornado/rmtree"
-tap "universal-ctags/universal-ctags"
-
-# build tools and requirements
-brew "autoconf"
-brew "cmake"
-brew "openssl"
-brew "pkg-config"
-brew "readline"
-brew "libyaml"
+# vim: ft=ruby
 
 # utilities
-brew "aria2"
+# brew "aria2"
 brew "bat"
-brew "beeftornado/rmtree/brew-rmtree"
 brew "figlet"
-brew "fish"
 brew "git"
 brew "git-absorb"
 brew "git-revise"
 brew "jq"
-brew "less"
 brew "neovim"
 brew "nodenv"
 brew "rbenv"
+brew "ruby-build"
 brew "ripgrep"
 brew "tmux"
 brew "tree"
-brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "vim"
-brew "watchman"
+# brew "watchman"
 brew "wget"
 brew "xz"
 brew "zsh"
@@ -42,16 +28,18 @@ brew "sqlite"
 
 # misc software
 cask "1password"
+cask "1password/tap/1password-cli"
 cask "alfred"
 cask "appcleaner"
+cask "dash"
 cask "firefox"
-cask "flux"
 cask "iterm2"
 cask "qlcolorcode"
 cask "qlmarkdown"
 cask "qlstephen"
 cask "ransomwhere"
 cask "rectangle"
-cask "sublime-text"
+cask "tableplus"
+
 mas "AdGuard for Safari", id: 1440147259
 mas "Things 3", id: 904280696
