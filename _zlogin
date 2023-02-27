@@ -1,4 +1,4 @@
-# vim: syntax=zsh
+# vim: ft=zsh
 
 [ -f ~/.zlogin_local ] && source ~/.zlogin_local
 

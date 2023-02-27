@@ -1,3 +1,3 @@
-# vim: syntax=zsh
+# vim: ft=zsh
 
 alias ls="ls -G"

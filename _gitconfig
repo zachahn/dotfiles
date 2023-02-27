@@ -1,3 +1,5 @@
+# vim: ft=gitconfig
+
 [pull]
 	rebase = true
 
@@ -69,5 +71,3 @@
 
 [advice]
 	skippedCherryPicks = false
-
-# vim: syntax=gitconfig

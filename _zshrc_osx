@@ -1,4 +1,4 @@
-# vim: syntax=zsh
+# vim: ft=zsh
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad

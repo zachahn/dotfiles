@@ -1,4 +1,4 @@
-# vim: syntax=zsh
+# vim: ft=zsh
 
 [ ! -d "$HOME/.zomg/vendor" ] && mkdir -p ~/.zomg/vendor
 

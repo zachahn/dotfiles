@@ -1,4 +1,4 @@
-# vim: syntax=zsh
+# vim: ft=zsh
 
 export EDITOR='vim'
 export VISUAL='vim'

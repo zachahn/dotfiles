@@ -1,4 +1,4 @@
-" vim: syntax=vim
+" vim: ft=vim
 
 set nocompatible
 
