@@ -41,5 +41,4 @@ cask "ransomwhere"
 cask "rectangle"
 cask "tableplus"
 
-mas "AdGuard for Safari", id: 1440147259
 mas "Things 3", id: 904280696
