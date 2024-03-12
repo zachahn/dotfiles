@@ -14,3 +14,5 @@ Icon
 tags
 !tags/
 .dtags-*
+*.xcodeproj/**/*/xcdebugger/
+*.xcodeproj/xcuserdata/*.xcuserdatad/
