@@ -21,6 +21,7 @@ Plug 'neovim/nvim-lspconfig'
 " UI
 Plug 'acarapetis/vim-colors-github'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
 
 " Navigation
 Plug 'mileszs/ack.vim'
@@ -40,6 +41,8 @@ Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mracos/mermaid.vim', { 'for': 'mermaid' }
+Plug 'timcharper/textile.vim', { 'for': 'textile' }
+Plug 'keith/swift.vim', { 'for': 'swift' }
 
 " Ruby
 Plug 'AndrewRadev/splitjoin.vim', { 'for': 'ruby' }
