@@ -46,3 +46,6 @@ for src_basename in _* ; do
     fi
   fi
 done
+
+echo
+echo "MANUALLY: git config --global --add include.path '~/.gitconfig_base'"

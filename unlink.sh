@@ -46,3 +46,6 @@ for dest in "$HOME"/.* ; do
     fi
   fi
 done
+
+echo
+echo "MANUALLY unset git's include.path=~/.gitconfig_base"
