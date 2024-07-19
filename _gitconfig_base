@@ -1,0 +1,78 @@
+# vim: ft=gitconfig
+
+[alias]
+	af = add -f
+	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
+	amend = commit --amend --verbose
+	ap = add --patch
+	bd = branch --delete
+	bm = branch --move
+	branches = for-each-ref --sort=-committerdate --format='%(color:cyan)%(HEAD) %(color:reset)%(if)%(upstream:track)%(then)%(upstream:track)     %(end)%(refname:short)' refs/heads/
+	buu = branch --unset-upstream
+	cob = checkout -b
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cstash = "!f() { git add . ; git commit --message 'WIP' ; }; f"
+	cv = commit --verbose
+	cva = "!f() { git add . ; git cv ; }; f"
+	cvam = !git add . && git commit --message
+	cvm = commit --message
+	delete-gone = "!f() { git branch -vv | grep ': gone]' | cut -d' ' -f3 | xargs git branch -d ; } ; f"
+	dp = "!git --no-pager diff"
+	everything = log --pretty=fuller --patch
+	exclude = "!mkdir .git/info 2> /dev/null ; touch .git/info/exclude"
+	f = "!f() { git fetch ; git status ; }; f"
+	git = !git
+	ia = ai
+	jedi = "!f() { current=$(git rev-parse --abbrev-ref HEAD) ; if git rev-parse --abbrev-ref \"${current}@{upstream}\" > /dev/null ; then git push --force-with-lease; else git push -u origin ${current} ; fi ; }; f"
+	last = log --pretty=fuller --patch -n 1 HEAD
+	lg = log --oneline -n 20
+	long = log --graph --abbrev-commit --decorate --date=relative --all --oneline
+	lp = "!f() { current=$(git rev-parse --abbrev-ref HEAD); if git rev-parse -q --verify origin/${current} > /dev/null ; then git log --oneline origin/${current}..HEAD ; fi; }; f"
+	m = merge
+	ma = merge --abort
+	nvm = "!f() { git uncommit; git unstage ; }; f"
+	pf = jedi
+	pu = "!f() { git fetch ; git status ; git pull ; }; f"
+	ra = rebase --abort
+	rc = !git add . && git rebase --continue
+	redit = reset HEAD~1
+	reorder = "!f() { git rebase --ignore-date HEAD~$1; }; f"
+	rs = rebase --skip
+	safe = !mkdir .git/safe
+	st = status
+	trash = "!f() { git checkout -- ${1+$@} ${1-.}; }; f"
+	uncommit = reset --soft HEAD~1
+	unstage = reset HEAD --
+
+[advice]
+	skippedCherryPicks = false
+
+;
+; ____ _  _ ___  ____ ____ _  _ _  _ ____ _  _ ___  ____
+; [__  |  | |__] |    |  | |\/| |\/| |__| |\ | |  \ [__
+; ___] |__| |__] |___ |__| |  | |  | |  | | \| |__/ ___]
+;
+
+[commit]
+	verbose = true
+
+[diff]
+	wsErrorHighlight = old,new
+	algorithm = histogram
+
+[fetch]
+	prune = true
+
+[init]
+	defaultBranch = main
+
+[log]
+	wsErrorHighlight = old,new
+
+[pull]
+	ff = only
+
+[push]
+	default = simple
