@@ -11,7 +11,6 @@
 
 [init]
 	defaultBranch = main
-	templatedir = ~/.git_template
 
 [diff]
 	wsErrorHighlight = old,new
