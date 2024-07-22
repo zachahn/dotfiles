@@ -1,1 +1,3 @@
 --smart-case
+
+--ignore-file=.git/rgignore

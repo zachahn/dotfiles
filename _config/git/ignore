@@ -8,7 +8,6 @@
 Icon
 ._*
 .byebug_history
-.ignore
 .bundle/
 *.xcodeproj/**/*/xcdebugger/
 *.xcodeproj/xcuserdata/*.xcuserdatad/
