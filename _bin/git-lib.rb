@@ -102,6 +102,10 @@ def current_branch!
   name
 end
 
+def git_subcommand
+  File.basename($0).sub(/^git-/, "git ")
+end
+
 if $0 == __FILE__
   puts <<~MSG
     #!/usr/bin/env ruby --disable=gems

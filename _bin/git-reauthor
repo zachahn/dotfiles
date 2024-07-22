@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby --disable=gems
+# frozen_string_literal: true
+
+require_relative "./git-lib"
+
+USAGE = <<USAGE
+Usage: #{git_subcommand} COUNT "Author Name <author@example.com>"
+USAGE
+
+count = ARGV.fetch(0, "")
+if count !~ /\A\d+\z/
+  puts USAGE
+  puts "Must specify number of commits to rebase"
+  exit 1
+end
+
+author = ARGV.fetch(1, "")
+if author !~ /\A.+ <.*@.*>\z/
+  puts USAGE
+  puts "Must specify author name and email (note the quotation marks)"
+  exit 1
+end
+
+exec("git", "rebase", "HEAD~#{count}", "--exec", "git commit --amend --no-edit --author=\"#{author}\"")
