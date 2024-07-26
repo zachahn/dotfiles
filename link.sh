@@ -49,3 +49,5 @@ done
 
 echo
 echo "MANUALLY: git config --global --add include.path '~/.gitconfig_base'"
+echo "MANUALLY: git config --global user.name \"Zach Ahn\""
+echo "MANUALLY: git config --global user.email \"example@example.com\""
