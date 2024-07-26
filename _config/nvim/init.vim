@@ -167,6 +167,7 @@ vnoremap K <Nop>
 
 nnoremap <Del> l
 
+iabbrev javascript JavaScript
 iabbrev Javascript JavaScript
 
 if filereadable(expand('~/.config/nvim/vimrc_local'))
