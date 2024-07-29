@@ -47,12 +47,15 @@ if [ -d "$HOME/Desktop" ]; then
 fi
 
 dots() {
-  dotdir="$(readlink "$HOME/.dotfiles")"
+  dotdir="$HOME/.dotfiles"
+  if [ -L "$dotdir" ]; then
+    dotdir="$(readlink "$dotdir")"
+  fi
   if [ ! -d "$dotdir" ]; then
     echo "ERROR: $dotdir does not exist."
-    exit 1
+    return 1
   fi
-  cd "$dotdir" || exit 1
+  cd "$dotdir" || return 1
 }
 
 xo() { [[ -n "$1" ]] && top -l1 | grep "$1" | cut -d ' ' -f 1 || echo "usage: $0 <process name>" ;  }
