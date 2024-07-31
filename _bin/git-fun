@@ -8,7 +8,8 @@ target = resolve_target(ARGV.first)
 run("git", "fu", target)
 
 if which("git-revise")
-  run("git", "revise", "--autosquash", "#{target}~~")
+  exec("git", "revise", "--autosquash", "#{target}~~")
 else
-  run({ "GIT_EDITOR" => "true" }, "git", "rebase", "--interactive", "--autosquash", "#{target}~~")
+  ENV["GIT_EDITOR"] = "true"
+  exec("git", "rebase", "--interactive", "--autosquash", "#{target}~~")
 end

@@ -4,4 +4,4 @@
 require_relative "./git-lib"
 
 run("git", "add", ".")
-run("git", "fun", *ARGV)
+exec("git", "fun", *ARGV)

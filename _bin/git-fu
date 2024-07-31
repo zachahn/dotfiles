@@ -5,4 +5,4 @@ require_relative "./git-lib"
 
 target = resolve_target(ARGV.first)
 
-run("git", "commit", "--fixup", target)
+exec("git", "commit", "--fixup", target)
