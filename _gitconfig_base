@@ -61,6 +61,7 @@
 [diff]
 	wsErrorHighlight = old,new
 	algorithm = histogram
+	noPrefix = true
 
 [fetch]
 	prune = true
