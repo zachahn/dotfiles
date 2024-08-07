@@ -19,7 +19,7 @@ bindkey -e
 bindkey "^[[3~" delete-char
 
 alias e='tv'
-alias ee='tv `git ls-files --others --modified --exclude-standard`'
+alias ee='$EDITOR `git ls-files --others --modified --exclude-standard`'
 alias lah='ls -lah'
 alias l='ls'
 alias sl='ls'
