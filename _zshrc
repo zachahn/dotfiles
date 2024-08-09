@@ -31,6 +31,7 @@ alias qgit='git'
 alias gt='git --no-pager'
 alias tmux='tmux -2'
 alias :e='vim'
+alias rg='\rg $([ -e .git/rgignore ] && printf --ignore-file=.git/rgignore)'
 
 if [ -d "$HOME/Notes" ]; then
   alias notes='cd ~/Notes'
