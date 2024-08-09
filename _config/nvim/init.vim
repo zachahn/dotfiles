@@ -58,6 +58,9 @@ Plug 'tpope/vim-rhubarb' " GitHub integration
 Plug 'tpope/vim-rsi' " Things like C-a to go home, C-e to go end
 Plug 'tpope/vim-unimpaired' " Pairs of bracket (as in []) maps
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
+
 if filereadable(expand('~/.config/nvim/vimrc_plugins_local'))
   source $HOME/.config/nvim/vimrc_plugins_local
 endif
