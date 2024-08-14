@@ -165,7 +165,6 @@ vnoremap > >gv
 nnoremap H <Nop>
 nnoremap M <Nop>
 nnoremap L <Nop>
-nnoremap K <Nop>
 vnoremap K <Nop>
 
 nnoremap <Del> l
