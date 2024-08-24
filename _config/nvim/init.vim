@@ -175,3 +175,5 @@ iabbrev Javascript JavaScript
 if filereadable(expand('~/.config/nvim/vimrc_local'))
   source $HOME/.config/nvim/vimrc_local
 endif
+
+lua require("config/treesitter")
