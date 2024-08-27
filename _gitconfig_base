@@ -13,7 +13,7 @@
 	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
-	cstash = "!f() { git add . ; git commit --message 'WIP' ; }; f"
+	cstash = "!f() { git add . ; git commit --no-verify --message 'WIP' ; }; f"
 	cv = commit --verbose
 	cva = "!f() { git add . ; git cv ; }; f"
 	cvam = !git add . && git commit --message
