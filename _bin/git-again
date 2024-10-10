@@ -4,5 +4,5 @@
 require_relative "./git-lib"
 
 run("git", "checkout", default_branch)
-run("git", "pull")
-exec("git", "delete-merged")
+exec("git", "fetch")
+exec("git", "merge")
