@@ -16,10 +16,5 @@ let g:fzf_colors = {
   \ 'header':  ['fg', 'Comment']
 \ }
 
-if executable('rg')
-  command! -bang FuzzyRip call fzf#run(fzf#wrap('rg-fzf', { 'options': '--multi --ignore-case --bind "change:transform-query(sed s,::,,g <<< {q})"', 'source': 'rg --files --ignore-vcs --sort-files' }, <bang>0))
-  nnoremap <C-P> :<C-U>FuzzyRip<CR>
-else
-  command! -bang FuzzySilver call fzf#run(fzf#wrap('ag-fzf', { 'options': '--multi', 'source': 'ag --files-with-matches --filename-pattern "" --ignore "\.git$\|\.hg$\|\.svn$" --skip-vcs-ignores' }, <bang>0))
-  nnoremap <C-P> :<C-U>FuzzySilver<CR>
-endif
+command! -bang FuzzyRip call fzf#run(fzf#wrap('rg-fzf', { 'options': '--multi --ignore-case', 'source': 'rg --files --ignore-vcs --sort-files' }, <bang>0))
+nnoremap <C-P> :<C-U>FuzzyRip<CR>
