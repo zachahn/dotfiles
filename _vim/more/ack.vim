@@ -1,10 +1,9 @@
 if executable('rg')
   let g:ack_use_dispatch = 0
 
+  let g:ackprg = 'rg --vimgrep --smart-case'
   if filereadable(".git/rgignore")
-    let g:ackprg = 'rg --vimgrep --smart-case --ignore-file=.git/rgignore'
-  else
-    let g:ackprg = 'rg --vimgrep --smart-case'
+    let g:ackprg = g:ackprg . ' --ignore-file=.git/rgignore'
   endif
 
   set grepprg=rg\ --vimgrep\ --smart-case
