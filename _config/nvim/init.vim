@@ -22,6 +22,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'acarapetis/vim-colors-github'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'f-person/auto-dark-mode.nvim'
 
 " Navigation
 Plug 'mileszs/ack.vim'
@@ -176,4 +177,5 @@ if filereadable(expand('~/.config/nvim/vimrc_local'))
   source $HOME/.config/nvim/vimrc_local
 endif
 
+lua require("config/auto_dark_mode")
 lua require("config/treesitter")
