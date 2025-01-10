@@ -3,6 +3,6 @@
 
 require_relative "./git-lib"
 
-target = resolve_target(ARGV.first)
+target = resolve_target(ARGV.shift)
 
-exec("git", "commit", "--fixup", target)
+exec("git", "commit", "--fixup", target, *ARGV)
