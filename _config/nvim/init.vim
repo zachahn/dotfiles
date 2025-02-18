@@ -122,7 +122,7 @@ source $HOME/.vim/more/fzf.vim
 source $HOME/.vim/more/lightline.vim
 source $HOME/.vim/more/netrw.vim
 source $HOME/.vim/more/projectionist.vim
-source $HOME/.config/nvim/more/lsp.lua
+source $HOME/.config/nvim/lua/config/lsp.lua
 
 if executable('gtar')
   let g:tar_cmd='/usr/local/bin/gtar'
