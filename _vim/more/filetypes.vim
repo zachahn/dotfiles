@@ -1,7 +1,7 @@
 augroup my_file_types
   autocmd!
   autocmd FileType gitcommit setlocal spell
-  autocmd FileType gitcommit setlocal colorcolumn=72
+  autocmd FileType gitcommit setlocal textwidth=72
 
   autocmd FileType haskell setlocal shiftwidth=2 tabstop=2 expandtab
 
