@@ -2,6 +2,8 @@
 
 set nocompatible
 
+let &runtimepath.=',~/.vim'
+
 let mapleader = ' '
 let maplocalleader = '\'
 
