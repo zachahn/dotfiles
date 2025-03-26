@@ -123,6 +123,10 @@ endif
 
 let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh', 'sh', 'mermaid']
 
+" Lol
+nnoremap ; :
+vnoremap ; :
+
 " Perform case-sensitive searches when searching with `*` or `#`
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\>\C<CR>
 nnoremap # ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>
