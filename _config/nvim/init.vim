@@ -97,6 +97,7 @@ command! Wq x
 command! Wqa xa
 command! Qa qa
 command! -nargs=1 Read 0read ~/.vim/templates/<args> | %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
+command! Gbrowse GBrowse
 
 set commentstring=#\ %s
 set number
