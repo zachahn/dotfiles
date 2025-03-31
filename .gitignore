@@ -13,6 +13,7 @@ _*_local
 /_config/*
 !/_config/bat/
 !/_config/dtags/
+!/_config/ghostty/
 !/_config/git/
 !/_config/nvim/
 /_config/nvim/plugged/
