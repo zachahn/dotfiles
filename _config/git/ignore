@@ -3,6 +3,7 @@
 .*.swp
 .*.swo
 .cursorignore
+.cursorindexingignore
 *.DS_Store
 .AppleDouble
 .LSOverride
