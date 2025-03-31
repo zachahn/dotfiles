@@ -24,6 +24,7 @@ augroup my_file_types
   autocmd BufNewFile,BufRead *.cr setfiletype ruby
 
   autocmd BufNewFile,BufRead *.json.jb set filetype=ruby
+  autocmd BufNewFile,BufRead *.html.arb set filetype=ruby
 
   autocmd FileType typescript setlocal commentstring=//\ %s
   autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 expandtab
