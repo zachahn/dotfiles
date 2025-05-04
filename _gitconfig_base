@@ -1,5 +1,8 @@
 # vim: ft=gitconfig
 
+[advice]
+	skippedCherryPicks = false
+
 [alias]
 	af = add -f
 	ai = "!f() { git add --intent-to-add ${1+} ${1--A} ; }; f"
@@ -47,22 +50,22 @@
 	unstage = reset HEAD --
 	wip = "!f() { git add . ; git commit --no-verify --message 'WIP' ; }; f"
 
-[advice]
-	skippedCherryPicks = false
+[branch]
+	sort = -committerdate
 
-;
-; ____ _  _ ___  ____ ____ _  _ _  _ ____ _  _ ___  ____
-; [__  |  | |__] |    |  | |\/| |\/| |__| |\ | |  \ [__
-; ___] |__| |__] |___ |__| |  | |  | |  | | \| |__/ ___]
-;
+[column]
+	ui = auto
 
 [commit]
 	verbose = true
 
 [diff]
-	wsErrorHighlight = old,new
 	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
 	noPrefix = true
+	renames = true
+	wsErrorHighlight = old,new
 
 [fetch]
 	prune = true
@@ -77,4 +80,13 @@
 	ff = only
 
 [push]
+	autoSetupRemote = false
 	default = simple
+	followTags = true
+
+[rebase]
+	autoSquash = true
+	updateRefs = true
+
+[tag]
+	sort = version:refname
