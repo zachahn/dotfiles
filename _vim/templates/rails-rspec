@@ -1,3 +1,5 @@
+# typed: false
+
 require "rails_helper"
 
 RSpec.describe [:VIM_EVAL:]Abolish.mixedcase(substitute(expand('%:t:r'), '_spec$', '', ''))[:END_EVAL:] do
