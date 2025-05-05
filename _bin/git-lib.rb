@@ -83,7 +83,7 @@ end
 
 def resolve_target(request)
   if request =~ /\A\d+\z/
-    "HEAD~#{ARGV.first.to_i - 1}"
+    "HEAD~#{request.to_i - 1}"
   elsif request == nil
     "HEAD"
   else
