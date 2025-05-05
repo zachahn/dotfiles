@@ -64,7 +64,6 @@ xoxo() { [[ -n "$1" ]] && xo "$1" | xargs kill -9 || echo "usage: $0 <process na
 
 [ -d ~/.nodenv/bin ] && export PATH="$HOME/.nodenv/bin:$PATH"
 [ -d ~/.nodenv ] && eval "$(nodenv init -)"
-[ -d ~/.rbenv/bin ] && export PATH="$HOME/.rbenv/bin:$PATH"
 [ -d ~/.rbenv ] && eval "$(rbenv init -)"
 [ -d ~/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin_local:$HOME/.bin:$PATH"
