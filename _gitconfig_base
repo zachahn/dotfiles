@@ -62,7 +62,6 @@
 [diff]
 	algorithm = histogram
 	colorMoved = plain
-	mnemonicPrefix = true
 	noPrefix = true
 	renames = true
 	wsErrorHighlight = old,new
