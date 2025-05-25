@@ -39,7 +39,7 @@
 	pf = jedi
 	pu = "!f() { git fetch ; git status ; git pull ; }; f"
 	ra = rebase --abort
-	rc = !git add . && git rebase --continue
+	rc = rebase --continue
 	redit = reset HEAD~1
 	reorder = "!f() { git rebase --ignore-date HEAD~$1; }; f"
 	rs = rebase --skip
