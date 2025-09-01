@@ -4,3 +4,4 @@ font-feature = -calt
 keybind = global:alt+space=toggle_visibility
 
 theme = light:GitHub-Light-Default,dark:GitHub-Dark-Default
+keybind = shift+enter=text:\n

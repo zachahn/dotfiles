@@ -13,3 +13,5 @@ Icon
 .bundle/
 *.xcodeproj/**/*/xcdebugger/
 *.xcodeproj/xcuserdata/*.xcuserdatad/
+
+**/.claude/settings.local.json
