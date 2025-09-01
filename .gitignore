@@ -11,6 +11,7 @@ _*_local
 /_zomg/vendor/
 
 /_config/*
+!/_config/atuin/
 !/_config/bat/
 !/_config/dtags/
 !/_config/ghostty/
