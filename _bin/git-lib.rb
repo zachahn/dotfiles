@@ -4,6 +4,11 @@
 require "open3"
 require "stringio"
 
+def x(*command, stdout: false, stderr: false)
+  o, _, _ = popen3(*command, stdout: stdout, stderr: stderr)
+  o
+end
+
 def popen3(*command, stdout:, stderr:)
   out, err, status = Open3.popen3(*command) do |i, o, e, t|
     out_reader = Thread.new do
