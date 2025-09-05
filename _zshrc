@@ -94,4 +94,4 @@ esac
 
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
-(( $+commands[atuin] )) && eval "$(atuin init zsh)"
+(( $+commands[atuin] )) && eval "$(atuin init zsh --disable-up-arrow)"
