@@ -1,7 +1,7 @@
 font-size = 15
 font-feature = -calt
 
-keybind = global:alt+space=toggle_visibility
-
 theme = light:GitHub-Light-Default,dark:GitHub-Dark-Default
+
+keybind = global:alt+space=toggle_visibility
 keybind = shift+enter=text:\n
