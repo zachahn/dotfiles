@@ -15,7 +15,7 @@
   {
     "context": "Editor",
     "bindings": {
-      "F12": "editor::GoToDefinition",
+      "f12": "editor::GoToDefinition",
       "ctrl-p": "file_finder::Toggle"
     }
   },
@@ -23,6 +23,14 @@
     "context": "Editor && vim_mode == insert",
     "bindings": {
       "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-shift-g": "vim::ShowLocation",
+      "alt-cmd-c": "editor::CopyRelativePath",
+      "ctrl-g": ["workspace::SendKeystrokes", "ctrl-shift-g alt-cmd-c"]
     }
   },
   {
