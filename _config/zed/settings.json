@@ -1,0 +1,38 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "base_keymap": "SublimeText",
+  "preview_tabs": {
+    "enabled": false
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "languages": {
+    "Ruby": {
+      "language_servers": [
+        "ruby-lsp",
+        "sorbet",
+        "rubocop",
+        "!solargraph",
+        "!steep"
+      ]
+    }
+  },
+  "vim_mode": true,
+  "vim": {
+    "default_mode": "normal",
+    "use_smartcase_find": false,
+    "use_system_clipboard": "never"
+  }
+}

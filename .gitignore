@@ -18,3 +18,5 @@ _*_local
 !/_config/git/
 !/_config/nvim/
 /_config/nvim/plugged/
+!/_config/zed/settings.json
+!/_config/zed/keymap.json
