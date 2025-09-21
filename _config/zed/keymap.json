@@ -32,7 +32,9 @@
       "ctrl-shift-g": "vim::ShowLocation",
       "alt-cmd-c": "editor::CopyRelativePath",
       "ctrl-g": ["workspace::SendKeystrokes", "ctrl-shift-g alt-cmd-c"],
-      "_": "tab_switcher::ToggleAll"
+      "_": "tab_switcher::ToggleAll",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem"
     }
   },
   {
