@@ -34,7 +34,15 @@
       "ctrl-g": ["workspace::SendKeystrokes", "ctrl-shift-g alt-cmd-c"],
       "_": "tab_switcher::ToggleAll",
       "tab": "pane::ActivateNextItem",
-      "shift-tab": "pane::ActivatePreviousItem"
+      "shift-tab": "pane::ActivatePreviousItem",
+      "= p": ["workspace::SendKeystrokes", "p"],
+      "space l": ["workspace::SendKeystrokes", "cmd-f escape"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space y": ["workspace::SendKeystrokes", "cmd-c escape"]
     }
   },
   {
