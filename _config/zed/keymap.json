@@ -46,5 +46,14 @@
     "bindings": {
       "escape": "workspace::ToggleLeftDock"
     }
+  },
+  {
+    "context": "(VimControl || (!Editor))",
+    "bindings": {
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
   }
 ]
