@@ -10,6 +10,7 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
+      "cmd-t": "terminal_panel::Toggle"
     }
   },
   {
@@ -64,6 +65,12 @@
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": ["workspace::SendKeystrokes", "ctrl-~"]
     }
   }
 ]
