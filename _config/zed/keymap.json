@@ -53,6 +53,12 @@
     }
   },
   {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  },
+  {
     "context": "(ProjectPanel && not_editing)",
     "bindings": {
       "escape": "workspace::ToggleLeftDock"
