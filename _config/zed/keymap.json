@@ -10,7 +10,8 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-      "cmd-t": "terminal_panel::Toggle"
+      "cmd-t": "terminal_panel::Toggle",
+      "ctrl-p": "file_finder::Toggle"
     }
   },
   {
@@ -24,7 +25,8 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": "vim::NormalBefore"
+      "j k": "vim::NormalBefore",
+      "ctrl-e": ["editor::MoveToEndOfLine", { "stop_at_soft_wraps": true }]
     }
   },
   {
