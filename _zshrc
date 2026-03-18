@@ -1,5 +1,7 @@
 # vim: ft=zsh
 
+[ -f ~/.zshrc_pre_local ] && source ~/.zshrc_pre_local
+
 [ ! -d "$HOME/.zomg/vendor" ] && mkdir -p ~/.zomg/vendor
 
 setopt INTERACTIVE_COMMENTS
