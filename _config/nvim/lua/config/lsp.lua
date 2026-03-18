@@ -4,4 +4,4 @@
 
 vim.diagnostic.config({ virtual_text = true })
 
-require"lspconfig".sorbet.setup{}
+vim.lsp.enable('sorbet')
