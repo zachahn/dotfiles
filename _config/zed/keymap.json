@@ -10,7 +10,7 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-      "cmd-t": "terminal_panel::Toggle",
+      "cmd-t": "terminal_panel::ToggleFocus",
       "ctrl-p": "file_finder::Toggle"
     }
   },
@@ -79,6 +79,174 @@
     "context": "Terminal",
     "bindings": {
       "cmd-t": ["workspace::SendKeystrokes", "ctrl-~"]
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k up": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k left": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k down": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k right": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k shift-enter": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k w": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k u": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k e": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k t": null
+    }
+  },
+  {
+    "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
+    "bindings": {
+      "cmd-k": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k shift-up": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k shift-down": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k shift-left": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k shift-right": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-up": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-down": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-left": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-right": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-k cmd-w": null
+    }
+  },
+  {
+    "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
+    "bindings": {
+      "cmd-k": null
+    }
+  },
+  {
+    "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
+    "bindings": {
+      "cmd-k": null
+    }
+  },
+  {
+    "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
+    "bindings": {
+      "cmd-k": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k s": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-s": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-k p": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-t": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k m": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-b": null
     }
   }
 ]
