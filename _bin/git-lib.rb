@@ -55,13 +55,7 @@ def which(cmd)
 end
 
 def default_branch
-  local_branches = `git branch --list`.split("\n").map { |b| b.sub(/^(?:\s+|\*\s)/, "") }
-
-  if local_branches.include?("main")
-    "main"
-  else
-    "master"
-  end
+  "main"
 end
 
 def has_remote?(remote_name)
