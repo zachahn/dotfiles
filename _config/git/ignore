@@ -15,3 +15,5 @@ Icon
 *.xcodeproj/xcuserdata/*.xcuserdatad/
 
 **/.claude/settings.local.json
+**/.claude/worktrees/
+**/.claude/turbocommit.json
