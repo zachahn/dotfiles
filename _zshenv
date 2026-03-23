@@ -3,3 +3,5 @@
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
+
+[ -d /opt/homebrew/bin/ ] && export PATH="/opt/homebrew/bin/:$PATH"
