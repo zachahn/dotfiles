@@ -1,19 +1,27 @@
-.swp
+# Editors
+*.xcodeproj/**/*/xcdebugger/
+*.xcodeproj/xcuserdata/*.xcuserdatad/
 .swo
-.*.swp
+.swp
 .*.swo
+.*.swp
 .cursorignore
 .cursorindexingignore
+
+# Claude Code
+**/.claude/settings.local.json
+**/.claude/turbocommit.json
+**/.claude/worktrees/
+**/.worktrees/
+CLAUDE.local.md
+
+# Ruby
+.bundle/
+.byebug_history
+
+# macOS
 *.DS_Store
 .AppleDouble
 .LSOverride
-Icon
 ._*
-.byebug_history
-.bundle/
-*.xcodeproj/**/*/xcdebugger/
-*.xcodeproj/xcuserdata/*.xcuserdatad/
-
-**/.claude/settings.local.json
-**/.claude/worktrees/
-**/.claude/turbocommit.json
+Icon
