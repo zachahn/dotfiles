@@ -3,10 +3,11 @@ augroup my_file_types
   autocmd FileType gitcommit setlocal spell
   autocmd FileType gitcommit setlocal textwidth=72
 
+  autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
+
   autocmd FileType haskell setlocal shiftwidth=2 tabstop=2 expandtab
 
   autocmd FileType markdown setlocal spell
-  autocmd FileType markdown setlocal textwidth=80
   autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 expandtab
 
   autocmd FileType ruby setlocal commentstring=#\ %s
@@ -28,4 +29,8 @@ augroup my_file_types
 
   autocmd FileType typescript setlocal commentstring=//\ %s
   autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 expandtab
+
+  autocmd FileType swift setlocal commentstring=//\ %s
+
+  autocmd FileType rust nnoremap <leader>help oprintln!("🔎 {:?}", );<esc>hi
 augroup END
