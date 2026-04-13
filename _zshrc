@@ -31,7 +31,6 @@ alias be='bundle exec'
 alias it='git'
 alias qgit='git'
 alias gt='git --no-pager'
-alias tmux='tmux -2'
 alias :e='vim'
 alias rg='\rg $([ -e .git/rgignore ] && printf --ignore-file=.git/rgignore)'
 
