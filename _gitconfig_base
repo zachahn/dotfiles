@@ -84,7 +84,7 @@
 
 [push]
 	autoSetupRemote = false
-	default = simple
+	default = upstream
 	followTags = true
 
 [rebase]
